@@ -1,0 +1,397 @@
+define(
+    [
+        'antie/widgets/widget',
+        'antie/widgets/container',
+        'antie/widgets/component',
+        'antie/widgets/horizontallist',
+        'antie/widgets/button',
+        'antie/widgets/label',
+        'antie/events/keyevent',
+        'antie/events/networkstatuschangeevent',
+        'antie/runtimecontext',
+        'antie/devices/mediaplayer/mediaplayer'
+    ],
+    function (
+        Widget,
+        Component,
+        Container,
+        HorizontalList,
+        Button,
+        Label,
+        KeyEvent,
+        NetworkStatusChangeEvent,
+        RuntimeContext,
+        MediaPlayer
+    ) {
+        return Component.extend({
+            init: function () {
+                var self = this;
+                this._super('homePage');
+
+                this.initElements();
+                this.registerNetworkStatusListener();
+                this.visibilityChangeListener();
+
+                this.keyHandler = this.createKeyHandler();
+                this.setActiveChildWidget(this.keyHandler);
+
+                this.initMediaPlayer();
+                this.onAfterShow(function(){
+                    self.startLive();
+                });
+            },
+
+            /**
+             * Media player
+             */
+            initMediaPlayer: function () {
+                var self = this;
+                this.mediaPlayer = RuntimeContext.getDevice().getMediaPlayer();
+
+                this.mediaPlayer.addEventCallback(this, function (e) {
+                    switch (e.type) {
+                        case MediaPlayer.EVENT.ERROR:
+                            self.showErrorMessage('Media Player', e.errorMessage);
+                            break;
+                        case MediaPlayer.EVENT.PLAYING:
+                            self.setElementVisible(self.elements.loader, false);
+                            self.setElementVisible(self.elements.play, false);
+                            break;
+                        case MediaPlayer.EVENT.PAUSED:
+                            self.setElementVisible(self.elements.play);
+                            break;
+                        case MediaPlayer.EVENT.BUFFERING:
+                            self.setElementVisible(self.elements.loader);
+                            break;
+                        case MediaPlayer.EVENT.STOPPED:
+                            break;
+                    }
+
+                    if (e.type === MediaPlayer.EVENT.PLAYING) {
+                        self.toggleScreenSaver(false);
+                    } else {
+                        self.toggleScreenSaver(true);
+                    }
+                });
+            },
+
+            /**
+             * Start live
+             */
+            startLive: function () {
+                try {
+                    this.mediaPlayer.setSource(
+                        MediaPlayer.TYPE.VIDEO,
+                        'https://bcliveunivsecure-lh.akamaihd.net/i/HopeChannelUkraine_1@432955/master.m3u8',
+                        'application/x-mpegurl'
+                    );
+                    this.mediaPlayer.beginPlayback();
+                } catch (e) {
+                	if (e.message) { 
+                		this.showErrorMessage('Start Live', e.message);
+                	}
+                }
+            },
+
+            initElements: function () {
+                var elements = {
+                    loader: this.createLoader(),
+                    play: this.createPlayButton(),
+                    network: this.createNetworkStatusPopup(),
+                    error: this.createErrorMessagePopup(),
+                    exit: this.createExitPopup()
+                };
+
+                for (var id in elements) {
+                    if (!elements.hasOwnProperty(id)) {
+                        continue;
+                    }
+
+                    var el = elements[id];
+                    this.appendChildWidget(el);
+                }
+
+                this.elements = elements;
+            },
+
+            createPlayButton: function () {
+                var playButton = new Component('playButton');
+
+                return playButton;
+            },
+
+            createExitPopup: function () {
+                var self = this;
+                
+                var exitPopup = new Component('exitPopup');
+                exitPopup.addClass('popup');
+
+                var message = new Label('exitMessage', 'Do you want to exit?');
+                message.addClass('message');
+                exitPopup.appendChildWidget(message);
+
+                var buttonContainer = new HorizontalList('buttonContainer');
+
+                var yesButton = new Button('yesButton');
+                yesButton.appendChildWidget(new Label('Yes'));
+                yesButton.addEventListener('select', function () {
+                    try {
+                        self.getCurrentApplication().exit();
+                    } catch (error) {
+                        self.toggleExitConfirmation(false);
+                        self.showErrorMessage('Exit', error.message);
+                    }
+                });
+                buttonContainer.appendChildWidget(yesButton);
+
+                var noButton = new Button('noButton');
+                noButton.appendChildWidget(new Label('No'));
+                noButton.addEventListener('select', function () {
+                    self.toggleExitConfirmation(false);
+                });
+                buttonContainer.appendChildWidget(noButton);
+
+                exitPopup.appendChildWidget(buttonContainer);
+                exitPopup.addEventListener('keydown', function (e) {
+                    if (e.keyCode === KeyEvent.VK_BACK) {
+                        self.toggleExitConfirmation(false);
+                    }
+                });
+
+                return this.wrapPopup(exitPopup);
+            },
+
+            createErrorMessagePopup: function () {
+                var self = this;
+
+                var errorPopup = new Component('errorPopup');
+                errorPopup.addClass('popup');
+
+                var title = new Label('errorTitle', 'error');
+                title.addClass('title');
+                errorPopup.appendChildWidget(title);
+
+                var message = new Label('errorMessage', '');
+                message.addClass('message');
+                errorPopup.appendChildWidget(message);
+
+                var okButton = new Button('okButton');
+                okButton.appendChildWidget(new Label('OK'));
+                okButton.addEventListener('select', function () {
+                    self.setElementVisible(self.elements.error, false);
+                    self.keyHandler.focus();
+                });
+                okButton.addEventListener('keydown', function (e) {
+                    if (e.keyCode === KeyEvent.VK_BACK) {
+                        self.setElementVisible(self.elements.error, false);
+                        self.keyHandler.focus();
+                    }
+                });
+
+                errorPopup.appendChildWidget(okButton);
+
+                return this.wrapPopup(errorPopup);
+            },
+
+            createLoader: function () {
+                var loader = new Component('loader');
+
+                return loader;
+            },
+
+            createNetworkStatusPopup: function () {
+                var networkStatusPopup = new Component('networkStatusPopup');
+                networkStatusPopup.addClass('popup');
+
+                var message = new Label('messageNetworkStatus', 'Please check network connection...');
+                message.addClass('message');
+                networkStatusPopup.appendChildWidget(message);
+
+                return this.wrapPopup(networkStatusPopup);
+            },
+
+            createKeyHandler: function () {
+                var self = this;
+                var keyHandler = new Button('keyHandler');
+                keyHandler.addEventListener('select', function () {
+                    if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                        self.mediaPlayer.pause();
+                    } else if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                        self.mediaPlayer.resume();
+                    }
+                });
+                keyHandler.addEventListener('keydown', function (e) {
+                    switch (e.keyCode) {
+                        case KeyEvent.VK_PLAY:
+                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                                self.mediaPlayer.resume();
+                            }
+                            break;
+                        case KeyEvent.VK_PAUSE:
+                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                                self.mediaPlayer.pause();
+                            }
+                            break;
+                        case KeyEvent.VK_PLAY_PAUSE:
+                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                                self.mediaPlayer.pause();
+                            } else if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                                self.mediaPlayer.resume();
+                            }
+                            break;
+
+                        // BACK button
+                        case KeyEvent.VK_BACK:
+                            self.toggleExitConfirmation(true);
+                            break;
+                            
+                        // COLOR buttons
+                        case KeyEvent.VK_RED:
+                        	console.log('error')
+                            self.showErrorMessage('title', 'message');
+                            break;
+                        case KeyEvent.VK_YELLOW:
+                            self.toggleNetworkStatusAlert(true);
+                            break;
+                        case KeyEvent.VK_BLUE:
+                            self.toggleExitConfirmation(true);
+                            break;
+                    }
+                });
+                this.appendChildWidget(keyHandler);
+
+                return keyHandler;
+            },
+            
+            wrapPopup: function(popup) {
+                var popupWrap = new Component();
+                popupWrap.addClass('popupWrap');
+                popupWrap.appendChildWidget(popup);
+                
+                return popupWrap;
+            },
+
+            /**
+             * App ready
+             */
+            onAfterShow: function (next) {
+                var self = this;
+                this.addEventListener('aftershow', function appReady() {
+                    self.getCurrentApplication().ready();
+                    self.removeEventListener('aftershow', appReady);
+                    next();
+                });
+            },
+
+            setElementVisible: function (el, visible) {
+                var options = {
+                    skipAnim: false,
+                    fps: 25,
+                    duration: 150,
+                    easing: 'ease'
+                };
+                visible = visible === undefined || visible;
+                visible ? el.show(options) : el.hide({ skipAnim: true });
+            },
+
+            showErrorMessage: function (title, message) {
+                var $errorPopup = this.elements.error.getChildWidget('errorPopup');
+                var $title = $errorPopup.getChildWidget('errorTitle');
+                console.log(1);
+                var $message = $errorPopup.getChildWidget('errorMessage');
+                console.log(2);
+                $title.setText(title + ' Error');
+                console.log(3);
+                $message.setText(message);
+                console.log(4);
+                this.elements.error.focus();
+                console.log(5);
+                this.setElementVisible(this.elements.error);
+            },
+
+            toggleExitConfirmation: function(show) {
+                if (show === undefined) {
+                    return false;
+                }
+
+                if (show) {
+                    this.elements.exit.focus();
+                } else {
+                    var exitPopup = this.elements.exit.getChildWidget('exitPopup');
+                    var buttonContainer = exitPopup.getChildWidget('buttonContainer');
+                    var yesButton = buttonContainer.getChildWidget('yesButton');
+
+                    buttonContainer.setActiveChildWidget(yesButton);
+                    this.keyHandler.focus();
+                }
+                this.setElementVisible(this.elements.exit, show);
+            },
+
+            toggleNetworkStatusAlert: function(show) {
+                this.setElementVisible(this.elements.network, show);
+            },
+
+            /**
+             * TIZEN Screen Saver
+             */
+            toggleScreenSaver: function(show) {
+                var self = this;
+                if (show === undefined) {
+                    show = true;
+                }
+
+                webapis.appcommon.setScreenSaver(
+                    show ? webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_ON : webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_OFF,
+                    function() {},
+                    function(error) {
+                        self.showErrorMessage('Screen Saver', error.message);
+                    }
+                );
+            },
+
+            registerNetworkStatusListener: function () {
+                var self = this;
+                this.addEventListener('networkstatuschange', function (e) {
+                    switch (e.type) {
+                        case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
+                            self.toggleNetworkStatusAlert(true);
+                            break;
+                        case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
+                            self.toggleNetworkStatusAlert(false);
+                            break;
+                    }
+                });
+
+                /**
+                 * TIZEN Network check
+                 */
+                 webapis.network.addNetworkStateChangeListener(function (value) {
+                     switch (value) {
+                         case webapis.network.NetworkState.GATEWAY_DISCONNECTED:
+                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
+                             break;
+                         case webapis.network.NetworkState.GATEWAY_CONNECTED:
+                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
+                             break;
+                     }
+                 });
+            },
+
+            /**
+             * Multitasking
+             */
+            visibilityChangeListener: function () {
+                var self = this;
+                document.addEventListener('visibilitychange', function (e) {
+                    if(document.hidden) {
+                        self.mediaPlayer.stop();
+                        self.mediaPlayer.reset();
+                    } else {
+                        self.startLive();
+                    }
+                });
+            }
+        });
+
+    }
+);

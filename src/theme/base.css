@@ -1,0 +1,166 @@
+/**
+ * Basic styles
+ */
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.popupWrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.popup {
+    display: inline-block;
+    width: 1100px;
+    margin-top: 200px;
+    padding: 100px 100px 120px;
+    border-radius: 2px;
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    box-shadow: 0 3px 80px 8px rgba(255,255,255,.1);
+    font-family: Arial;
+}
+
+.title {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
+.message {
+    display: block;
+    margin-bottom: 80px;
+    line-height: 56px;
+    color: rgba(255,255,255,0.9);
+    font-size: 64px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    width: 260px;
+    height: 90px;
+    margin-left: 16%;
+    border: 5px solid #0d4792;
+    color: #fff;
+    line-height: 90px;
+    font-size: 46px;
+}
+
+.button:first-of-type {
+    margin: 0;
+}
+
+.buttonFocussed {
+    background-color: #0d4792;
+    font-weight: bolder;
+}
+
+#app, #maincontainer, #homePage {
+    width: inherit;
+    height: inherit;
+}
+
+/**
+ * Initial loader
+ */
+#loading-screen {
+    width: inherit;
+    height: inherit;
+    background: url('images/loading-screen.png') no-repeat;
+    background-size: cover;
+}
+
+#videoPlayer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#keyHandler {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+#playButton {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('images/playButton.png') no-repeat;
+    background-size: cover;
+    visibility: hidden;
+    opacity: .9;
+    z-index: 1;
+}
+
+#loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background: url('images/loader.gif') center no-repeat;
+    background-size: 200px;
+    visibility: hidden;
+    opacity: .9;
+    z-index: 1;
+}
+
+
+#errorPopup {
+    border: 8px solid #b22222;
+}
+
+#errorTitle {
+    color: #b22222;
+}
+
+/**
+ * Network Status Popup
+ */
+#networkStatusPopup {
+    margin-top: 300px;
+    border: 8px solid #e28522;
+}
+
+#networkStatusPopup .message {
+    margin: 0;
+}
+
+/**
+ * Exit Popup
+ */
+#exitPopup {
+    border: 8px solid #0d4792;
+}
+
+#exitPopup .message {
+    margin-bottom: 8%;
+    line-height: 120px;
+    font-size: 74px;
+    font-weight: bold;
+}
+
+#buttonContainer {
+    text-align: center;
+}

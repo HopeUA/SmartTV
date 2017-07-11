@@ -1,0 +1,7 @@
+{
+  "name": "tizen",
+  "dependencies": {
+    "requirejs": "^2.3.3",
+    "tal": "^7.4.1"
+  }
+}
