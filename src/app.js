@@ -146,12 +146,9 @@ require(
     ],
     function (Application, Container) {
         // antie.framework.deviceConfiguration = DeviceConfig(navigator.userAgent);
-        var self = this;
-
         var App = Application.extend({
             init: function (appDiv, styleDir, imgDir, callback) {
-                var self;
-                self = this;
+                var self = this;
 
                 self._super(appDiv, styleDir, imgDir, callback);
 
