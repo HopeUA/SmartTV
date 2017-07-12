@@ -247,7 +247,6 @@ define(
                             
                         // COLOR buttons
                         case KeyEvent.VK_RED:
-                        	console.log('error')
                             self.showErrorMessage('title', 'message');
                             break;
                         case KeyEvent.VK_YELLOW:
@@ -297,15 +296,10 @@ define(
             showErrorMessage: function (title, message) {
                 var $errorPopup = this.elements.error.getChildWidget('errorPopup');
                 var $title = $errorPopup.getChildWidget('errorTitle');
-                console.log(1);
                 var $message = $errorPopup.getChildWidget('errorMessage');
-                console.log(2);
                 $title.setText(title + ' Error');
-                console.log(3);
                 $message.setText(message);
-                console.log(4);
                 this.elements.error.focus();
-                console.log(5);
                 this.setElementVisible(this.elements.error);
             },
 
