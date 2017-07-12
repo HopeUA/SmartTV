@@ -3,5 +3,9 @@
   "dependencies": {
     "requirejs": "^2.3.3",
     "tal": "^7.4.1"
-  }
+  },
+  "browserslist": [
+    "chrome >= 21",
+    "firefox >= 20"
+  ]
 }
