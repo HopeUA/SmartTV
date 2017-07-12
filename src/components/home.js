@@ -247,7 +247,6 @@ define(
                             
                         // COLOR buttons
                         case KeyEvent.VK_RED:
-                        	console.log('error')
                             self.showErrorMessage('title', 'message');
                             break;
                         case KeyEvent.VK_YELLOW:
@@ -297,15 +296,10 @@ define(
             showErrorMessage: function (title, message) {
                 var $errorPopup = this.elements.error.getChildWidget('errorPopup');
                 var $title = $errorPopup.getChildWidget('errorTitle');
-                console.log(1);
                 var $message = $errorPopup.getChildWidget('errorMessage');
-                console.log(2);
                 $title.setText(title + ' Error');
-                console.log(3);
                 $message.setText(message);
-                console.log(4);
                 this.elements.error.focus();
-                console.log(5);
                 this.setElementVisible(this.elements.error);
             },
 
@@ -349,33 +343,33 @@ define(
                 );
             },
 
-            registerNetworkStatusListener: function () {
-                var self = this;
-                this.addEventListener('networkstatuschange', function (e) {
-                    switch (e.type) {
-                        case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
-                            self.toggleNetworkStatusAlert(true);
-                            break;
-                        case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
-                            self.toggleNetworkStatusAlert(false);
-                            break;
-                    }
-                });
-
-                /**
-                 * TIZEN Network check
-                 */
-                 webapis.network.addNetworkStateChangeListener(function (value) {
-                     switch (value) {
-                         case webapis.network.NetworkState.GATEWAY_DISCONNECTED:
-                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
-                             break;
-                         case webapis.network.NetworkState.GATEWAY_CONNECTED:
-                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
-                             break;
-                     }
-                 });
-            },
+            // registerNetworkStatusListener: function () {
+            //     var self = this;
+            //     this.addEventListener('networkstatuschange', function (e) {
+            //         switch (e.type) {
+            //             case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
+            //                 self.toggleNetworkStatusAlert(true);
+            //                 break;
+            //             case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
+            //                 self.toggleNetworkStatusAlert(false);
+            //                 break;
+            //         }
+            //     });
+            //
+            //     /**
+            //      * TIZEN Network check
+            //      */
+            //      webapis.network.addNetworkStateChangeListener(function (value) {
+            //          switch (value) {
+            //              case webapis.network.NetworkState.GATEWAY_DISCONNECTED:
+            //                  self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
+            //                  break;
+            //              case webapis.network.NetworkState.GATEWAY_CONNECTED:
+            //                  self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
+            //                  break;
+            //          }
+            //      });
+            // },
 
             /**
              * Multitasking

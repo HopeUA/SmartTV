@@ -11,20 +11,20 @@ requirejs.config({
 var antie = {
     framework: {
         deviceConfiguration: {
-            "pageStrategy": "html5",
+            "pageStrategy": "samsungmaple",
             "modules": {
                 "base": "antie/devices/browserdevice",
                 "modifiers": [
                     "antie/devices/anim/css3",
-                    "hope/devices/mediaplayer/samsung_tizen",
-                    "antie/devices/mediaplayer/live/seekable",
-                    "antie/devices/broadcastsource/tizentvsource",
-                    "antie/devices/data/json2",
+                    "antie/devices/mediaplayer/samsung_maple",
+                    "antie/devices/broadcastsource/samsungtvsource",
+                    "antie/devices/data/nativejson",
                     "antie/devices/storage/cookie",
                     "antie/devices/logging/onscreen",
                     "antie/devices/logging/xhr",
                     "antie/devices/logging/jstestdriver",
-                    "antie/devices/exit/samsung_tizen",
+                    "antie/devices/exit/samsung_maple",
+                    "antie/devices/exit/broadcast/samsung_maple",
                     "antie/devices/parentalguidance/appdefaultpghandler"
                 ]
             },
@@ -46,6 +46,7 @@ var antie = {
                                 "hls",
                                 "plain"
                             ],
+                            "maximumBitRate": 3600,
                             "maximumVideoLines": 1080
                         }
                     ]
@@ -67,38 +68,35 @@ var antie = {
             },
             "input": {
                 "map": {
-                    "38": "UP",
-                    "40": "DOWN",
-                    "37": "LEFT",
-                    "39": "RIGHT",
-                    "13": "ENTER",
-                    "415": "PLAY",
-                    "19": "PAUSE",
-                    "10252": "PLAY_PAUSE",
-                    "413": "STOP",
-                    "417": "FAST_FWD",
-                    "412": "REWIND",
-                    "10233": "NEXT",
-                    "10232": "PREV",
-                    "48": "0",
-                    "49": "1",
-                    "50": "2",
-                    "51": "3",
-                    "52": "4",
-                    "53": "5",
-                    "54": "6",
-                    "55": "7",
-                    "56": "8",
-                    "57": "9",
-                    "10225": "SEARCH",
-                    "10009": "BACK",
-                    "457": "INFO",
-                    "403": "RED",
-                    "404": "GREEN",
-                    "405": "YELLOW",
-                    "406": "BLUE",
-                    "10221": "SUBTITLE"
-
+                    "29460": "UP",
+                    "29461": "DOWN",
+                    "4": "LEFT",
+                    "5": "RIGHT",
+                    "29443": "ENTER",
+                    "71": "PLAY",
+                    "74": "PAUSE",
+                    "70": "STOP",
+                    "72": "FAST_FWD",
+                    "69": "REWIND",
+                    "101": "1",
+                    "98": "2",
+                    "6": "3",
+                    "8": "4",
+                    "9": "5",
+                    "10": "6",
+                    "12": "7",
+                    "13": "8",
+                    "14": "9",
+                    "17": "0",
+                    "0": "SPACE",
+                    "259": "BACK_SPACE",
+                    "88": "BACK",
+                    "652": "SUBTITLE",
+                    "31": "INFO",
+                    "108": "RED",
+                    "20": "GREEN",
+                    "21": "YELLOW",
+                    "22": "BLUE"
                 }
             },
             "accessibility": {
@@ -110,30 +108,32 @@ var antie = {
             },
             "layouts": [
                 {
-                    "width": 1920,
-                    "height": 1080,
-                    "module": "src/layouts/1080p",
+                    "width": 960,
+                    "height": 540,
+                    "module": "src/layouts/540p",
                     "classes": [
-                        "browserdevice1080p"
+                        "browserdevice540p"
                     ]
                 }
+                // {
+                //     "width": 1280,
+                //     "height": 720,
+                //     "module": "src/layouts/720p",
+                //     "classes": [
+                //         "browserdevice720p"
+                //     ]
+                // }
             ],
             "networking": {
-                "supportsJSONP": true,
-                "supportsCORS": true
+                "supportsJSONP": true
             },
             "broadcast": {
-                "aitProfile": "dtg_local",
-                "currentChannelValidation": {
-                    "enabled": true
-                }
+                "aitProfile": "dtg_local"
             },
-            "capabilities": ["dial_capable"],
+            "capabilities": [],
             "statLabels": {
                 "deviceType": "smarttv",
-                "serviceType": "retail",
-                "osType": "tizen",
-                "browserType": "tizen"
+                "serviceType": "retail"
             }
         }
     }
