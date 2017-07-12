@@ -30,7 +30,6 @@ define(
 
                 this.initElements();
                 this.registerNetworkStatusListener();
-                this.visibilityChangeListener();
 
                 this.keyHandler = this.createKeyHandler();
                 this.setActiveChildWidget(this.keyHandler);
@@ -66,12 +65,6 @@ define(
                         case MediaPlayer.EVENT.STOPPED:
                             break;
                     }
-
-                    if (e.type === MediaPlayer.EVENT.PLAYING) {
-                        self.toggleScreenSaver(false);
-                    } else {
-                        self.toggleScreenSaver(true);
-                    }
                 });
             },
 
@@ -87,9 +80,9 @@ define(
                     );
                     this.mediaPlayer.beginPlayback();
                 } catch (e) {
-                	if (e.message) { 
-                		this.showErrorMessage('Start Live', e.message);
-                	}
+                    if (e.message) {
+                        this.showErrorMessage('Start Live', e.message);
+                    }
                 }
             },
 
@@ -325,63 +318,16 @@ define(
                 this.setElementVisible(this.elements.network, show);
             },
 
-            /**
-             * TIZEN Screen Saver
-             */
-            toggleScreenSaver: function(show) {
+            registerNetworkStatusListener: function () {
                 var self = this;
-                if (show === undefined) {
-                    show = true;
-                }
-
-                webapis.appcommon.setScreenSaver(
-                    show ? webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_ON : webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_OFF,
-                    function() {},
-                    function(error) {
-                        self.showErrorMessage('Screen Saver', error.message);
-                    }
-                );
-            },
-
-            // registerNetworkStatusListener: function () {
-            //     var self = this;
-            //     this.addEventListener('networkstatuschange', function (e) {
-            //         switch (e.type) {
-            //             case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
-            //                 self.toggleNetworkStatusAlert(true);
-            //                 break;
-            //             case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
-            //                 self.toggleNetworkStatusAlert(false);
-            //                 break;
-            //         }
-            //     });
-            //
-            //     /**
-            //      * TIZEN Network check
-            //      */
-            //      webapis.network.addNetworkStateChangeListener(function (value) {
-            //          switch (value) {
-            //              case webapis.network.NetworkState.GATEWAY_DISCONNECTED:
-            //                  self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
-            //                  break;
-            //              case webapis.network.NetworkState.GATEWAY_CONNECTED:
-            //                  self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
-            //                  break;
-            //          }
-            //      });
-            // },
-
-            /**
-             * Multitasking
-             */
-            visibilityChangeListener: function () {
-                var self = this;
-                document.addEventListener('visibilitychange', function (e) {
-                    if(document.hidden) {
-                        self.mediaPlayer.stop();
-                        self.mediaPlayer.reset();
-                    } else {
-                        self.startLive();
+                this.addEventListener('networkstatuschange', function (e) {
+                    switch (e.type) {
+                        case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
+                            self.toggleNetworkStatusAlert(true);
+                            break;
+                        case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
+                            self.toggleNetworkStatusAlert(false);
+                            break;
                     }
                 });
             }

@@ -185,7 +185,3 @@ require(
         );
     }
 );
-
-// TIZEN
-var keys = ['MediaPlay','MediaPause','MediaPlayPause', 'ColorF0Red', 'ColorF2Yellow', 'ColorF3Blue'];
-tizen.tvinputdevice.registerKeyBatch(keys);
