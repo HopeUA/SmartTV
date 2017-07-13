@@ -115,14 +115,6 @@ var antie = {
                         "browserdevice540p"
                     ]
                 }
-                // {
-                //     "width": 1280,
-                //     "height": 720,
-                //     "module": "src/layouts/720p",
-                //     "classes": [
-                //         "browserdevice720p"
-                //     ]
-                // }
             ],
             "networking": {
                 "supportsJSONP": true
