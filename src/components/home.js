@@ -275,7 +275,7 @@ define(
                 var options = {
                     skipAnim: false,
                     fps: 25,
-                    duration: 150,
+                    duration: 100,
                     easing: 'ease'
                 };
                 visible = visible === undefined || visible;
