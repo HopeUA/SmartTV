@@ -21,17 +21,17 @@
 
 <script>
 window.onload = window.onLoad = function() {
-	var widgetAPI = new Common.API.Widget(); // Creates Common module
-	widgetAPI.sendReadyEvent();
+    var widgetAPI = new Common.API.Widget(); // Creates Common module
+    widgetAPI.sendReadyEvent();
 
-	var tvKey  = new Common.API.TVKeyValue();
-	var pluginAPI = new Common.API.Plugin();
-	var navPlugin = document.getElementById('pluginObjectNNavi');
-	navPlugin.SetBannerState(1);
-	
-	pluginAPI.unregistKey(tvKey.KEY_VOL_UP);
-	pluginAPI.unregistKey(tvKey.KEY_VOL_DOWN);
-	pluginAPI.unregistKey(tvKey.KEY_MUTE);		
+    var tvKey  = new Common.API.TVKeyValue();
+    var pluginAPI = new Common.API.Plugin();
+    var navPlugin = document.getElementById('pluginObjectNNavi');
+    navPlugin.SetBannerState(1);
+
+    pluginAPI.unregistKey(tvKey.KEY_VOL_UP);
+    pluginAPI.unregistKey(tvKey.KEY_VOL_DOWN);
+    pluginAPI.unregistKey(tvKey.KEY_MUTE);
 };
 </script>
 </body>
