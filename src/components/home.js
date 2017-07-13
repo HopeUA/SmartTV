@@ -237,17 +237,6 @@ define(
                         case KeyEvent.VK_BACK:
                             self.toggleExitConfirmation(true);
                             break;
-                            
-                        // COLOR buttons
-                        case KeyEvent.VK_RED:
-                            self.showErrorMessage('title', 'message');
-                            break;
-                        case KeyEvent.VK_YELLOW:
-                            self.toggleNetworkStatusAlert(true);
-                            break;
-                        case KeyEvent.VK_BLUE:
-                            self.toggleExitConfirmation(true);
-                            break;
                     }
                 });
                 this.appendChildWidget(keyHandler);
