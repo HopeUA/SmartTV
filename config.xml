@@ -7,7 +7,6 @@
   
   <category itemtype="string">Videos</category>
   <autoUpdate itemtype="boolean">y</autoUpdate>
-  <type itemtype="string">user</type>
 
   <widgetname itemtype="string">Hope.UA</widgetname>
   <ver itemtype="string">1.1</ver>
