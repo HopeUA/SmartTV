@@ -318,6 +318,33 @@ define(
                 this.setElementVisible(this.elements.network, show);
             },
 
+            checkConnection: function () {
+                var networkPlugin = document.getElementById('pluginObjectNetwork');
+                var currentInterface = networkPlugin.GetActiveType();
+
+                if (currentInterface === -1) {
+                    return false;
+                }
+
+                var physicalConnection = networkPlugin.CheckPhysicalConnection(currentInterface);
+                var httpStatus = networkPlugin.CheckHTTP(currentInterface);
+                var gatewayStatus = networkPlugin.CheckGateway(currentInterface);
+
+                if (physicalConnection !== 1) {
+                    return false;
+                }
+
+                if (httpStatus !== 1) {
+                    return false;
+                }
+
+                if (gatewayStatus !== 1) {
+                    return false;
+                }
+
+                return true;
+            },
+
             registerNetworkStatusListener: function () {
                 var self = this;
                 this.addEventListener('networkstatuschange', function (e) {
@@ -330,8 +357,19 @@ define(
                             break;
                     }
                 });
+
+                var internetConnectionInterval = 500;
+                setInterval(
+                    function () {
+                        if(!self.checkConnection()) {
+                            self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
+                        } else {
+                            self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
+                        }
+                    },
+                    internetConnectionInterval
+                );
             }
         });
-
     }
 );
