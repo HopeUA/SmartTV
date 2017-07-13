@@ -87,9 +87,9 @@ define(
                     );
                     this.mediaPlayer.beginPlayback();
                 } catch (e) {
-                	if (e.message) { 
-                		this.showErrorMessage('Start Live', e.message);
-                	}
+                    if (e.message) {
+                        this.showErrorMessage('Start Live', e.message);
+                    }
                 }
             },
 
@@ -242,17 +242,6 @@ define(
 
                         // BACK button
                         case KeyEvent.VK_BACK:
-                            self.toggleExitConfirmation(true);
-                            break;
-                            
-                        // COLOR buttons
-                        case KeyEvent.VK_RED:
-                            self.showErrorMessage('title', 'message');
-                            break;
-                        case KeyEvent.VK_YELLOW:
-                            self.toggleNetworkStatusAlert(true);
-                            break;
-                        case KeyEvent.VK_BLUE:
                             self.toggleExitConfirmation(true);
                             break;
                     }

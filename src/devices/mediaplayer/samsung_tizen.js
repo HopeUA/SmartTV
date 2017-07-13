@@ -222,9 +222,6 @@ define(
                             self._toPlaying();
                         }
                     },
-                    // onstreamcompleted: function () {
-                    //     console.log("Stream Completed");
-                    // },
                     oncurrentplaytime: function(currentTime) {
                         self._onCurrentTime(currentTime);
                     },
@@ -232,9 +229,6 @@ define(
 
                         self._toError(error);
                     }
-                    // onevent: function (eventType, eventData) {
-                    //     console.log("event type: " + eventType + ", data: " + eventData);
-                    // }
                 };
 
                 this._playerPlugin.setListener(listener);

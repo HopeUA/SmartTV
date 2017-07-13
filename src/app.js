@@ -145,8 +145,7 @@ require(
         'antie/widgets/container'
     ],
     function (Application, Container) {
-        // antie.framework.deviceConfiguration = DeviceConfig(navigator.userAgent);
-        var App = Application.extend({
+        var App = Application.extend( {
             init: function (appDiv, styleDir, imgDir, callback) {
                 var self = this;
 
