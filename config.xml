@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.samsung.com/">
   <ThumbIcon itemtype="string">icon/legacy__thumb-icon.png</ThumbIcon>
+  <ThumbIconHD itemtype="string">icon/legacy__thumb-iconHD.png</ThumbIconHD>
   <BigThumbIcon itemtype="string">icon/legacy__big-thumb-icon.png</BigThumbIcon>
+  <BigThumbIconHD itemtype="string">icon/legacy__big-thumb-iconHD.png</BigThumbIconHD>
   <ListIcon itemtype="string">icon/legacy__list-icon.png</ListIcon>
+  <ListIconHD itemtype="string">icon/legacy__list-iconHD.png</ListIconHD>
   <BigListIcon itemtype="string">icon/legacy__big-list-icon.png</BigListIcon>
+  <BigListIconHD itemtype="string">icon/legacy__big-list-iconHD.png</BigListIconHD>
   
   <category itemtype="string">Videos</category>
   <autoUpdate itemtype="boolean">y</autoUpdate>
