@@ -1,0 +1,804 @@
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="AuthorSignature">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI=".DS_Store">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>eXA410/qSNWe8dQse6C4aa71mOEGG9D3TvGXsJtszY0=</DigestValue>
+</Reference>
+<Reference URI="config.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>R20gkIcJc1K80ACbp1EKeX9TdfRC0xU9MeJMA5TiUms=</DigestValue>
+</Reference>
+<Reference URI="icon.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Hvh0zpa5MGiudNDeB0pgJWKO4Fom4AEKSRzhCFoCzfw=</DigestValue>
+</Reference>
+<Reference URI="index.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Fdpea4x52kaEU13Hq3H9reh/ewusgxdil9SgbrdYA7c=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2F.DS_Store">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>oidIDY2obkzSqzQGanZSymrnXu9G5jgclSxcP2vgwyg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Frequirejs%2F.DS_Store">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>lWUKtRQPkqDPzl2qN1BtWT4xt39MTiXqUw5Qi6pwI7s=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Frequirejs%2Frequire.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>pfoJwHEqXsAIyLrnSB6maCnMnFE6JMQ3sZtFUrnM99k=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2F.DS_Store">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>re9Se/8QoTGiWVTdoqj7q8lVWJM6jyDiflJ6zOhVDwk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2F.eslintignore">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>z3+kvZePoUKtuEIBSAlO8UcFznIng4IAX53+UzGIetw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2F.eslintrc.json">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>gQPbszmHc4xnhwvvW7t+6MVQASNerC+/O+zXA70Sa44=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2F.npmignore">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>RDPOct715mRI1rZyb7/af1wk+neW1hiE7q96l4xmAIk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2F.travis.yml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>UyoMIDKwpP3O7hiS1bigINh8+GXoNgpORcvY3d2ZyHQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fapplication.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>VDbPs+7HGR0d6EjN7Hjr+7UR23d3cb4+PdGBKxfq3Lo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Faudiosource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>sdmRRdZ12rKAvHQYnHIXBf9iPe4gBe+mQXghxPuNwUc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fcallbackmanager.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>eWXzGyhAPTjqR1Ek5SwjTlmgOpMBM8RxW1H2L1zkEiI=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fclass.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>BMDRBMnHMtQA2EMn15TYPKSCAAhGpFTQ0tzge4jsbwY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdatasource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>8BEytpIXbODlleWj5tGohuUZzHWAfTY5UIRlKqqqbeU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>GSiM9WpYxIecGk23V9ygsGHcfawO17YizPGcM/xdGAc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Feasinglookup.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Aak7qsJfG24V/ao5R8aQsIgXxqsqB2EFYah5izBfVw8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Fexistingtransitiondefinition.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>gbV5EImbqeAB017ZdewdQ6HvwL1LTQsa8hVSZlSD46Q=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Foptionstransitiondefinition.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+ZRgXuCuBFGFC0iOPYSaLWbn0VkD1cj5Y+zy+9qtsjU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Fskipanimtransitiondefinition.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>gX0EaGokV9o9t6vjQowAYEyC0JIO47zlUQCg2bW5e1A=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Fstringhelpers.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>me9iudnwSe5TB4mUQhokTtTDU1EfMQMYa7bqanbTk/k=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Ftransition.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>hSoIlMEOZ+YNCz3biMp96lLE48xUxui7N/VoFx7cxAA=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Ftransitiondefinition.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>mew4g4+k/AFmo6WTn7q6B6kLY4wHjf/kfGq76H/DUXY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3%2Ftransitionelement.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>y1MZNFvZozHqtHZgmFs9zMBiw+p2s4qOsATrhzzt5+Q=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3transform.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>fQVRxtdbTpk2uL70rUhsGa2c8QO4rCWKeAnXr3zXtBg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3transform%2Fanimationfactory.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>mp/N+6tdTl6Ntf+zd+Pho1jqi0g+ZKMCcAnnPDo4ymA=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3transform%2Ftransition.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Vp2YzxGIGxt2Kbrl2RJhjGHX+UGqP+ulzUJtnsKQO4Y=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3transform%2Ftranslate.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>9H+ytauP/x/MbA3Kw+XEKmKvDggSxh8zi3525ecr/yw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fcss3transform%2Ftween.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>rwiRVybJqiwhuWl6MozIbo7kKA7hYEy0D/QnqB3OSCU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fnoanim.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>9Dtu10dr3ildu4KfynpFolyaHeHujre1i/Nhq7kfUpg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fshared%2Fhelpers.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Y+3gmWJ9zQZITtOA4i+RaFokO8nwXJWmn1mk+sH9/GY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fshared%2Ftransitionendpoints.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Fx6W/UhrOqpQFSfhAv+Fm+7Da6EL5WJoiyUss/GIuWs=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Fstyletopleft.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>RPe6T1m9duz8v3BZ4B03eWC9/fY4P9orot5KSgGItdk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fanim%2Ftween.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>oi+It+zqHRyoa+dQPk9jWHeMMj9Zj4ryr8TmmfQGKM0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fbroadcastsource%2Fbasetvsource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>HzGociV1xrdlsPIY3gyi/lunx6AtI7R8ArtDf2xCo1w=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fbroadcastsource%2Fhbbtvsource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>SQkSjiQFcCYIG8H8jNiXcqnvkyjlR1yI0FBynzKKF+I=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fbroadcastsource%2Fsamsungtvsource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>EMkxUB0D4eB1yMDFUaaW2vX51Ec9w7AlKDeWJT35C28=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fbroadcastsource%2Fstubbedsource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>QX5xhxUopC0yECnSFmBvSQxg7yTkg3n0h9SemGXS2L0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fbroadcastsource%2Ftizentvsource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>euKrDiPFSLPsLUjw7kqiklSLJ7kxt2z96tQLLA9MgnM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fbrowserdevice.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>F4bGMQrCd/WEokGwgEXHcTvtCzA7yOsSj+leLf4oqz0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fdata%2Fjson2.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>WeHleP/RoQ7sM8YSb7yXS9eGdGB/VE134yFgbnLENKc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fdata%2Fnativejson.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>o3+2qlrsQdhILWunG3USz1Gl+6sBMQlJ2dCuRvrWe08=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fdevice.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>xmSr6RJIu2QCJJOsn6FFUIsDJqnOX5AQ1QUMCkqdx8o=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fbroadcast%2Fnetcast.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>/ChQUj7l8/ZQE4M3MoZf3E2sSlBP9dq6vjLETGBKALY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fbroadcast%2Fsamsung_maple.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>yp4yiiomaxIIsTYWPZOLqBnFFvqBep/cggLr0Pca240=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fclosewindow.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>fZK3biAJoxKLrkrcZtS3zWNI6VgaMShf1L3U5w9Ihk8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fdestroyapplication.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>v+3CY+5I8GeNJNAzMrdRkJ7UhatVpvTl26opSzwD4yA=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fhistory.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>2jrlcCJJ+T2NQeBx878ltwUlcXtfNMPNevPAqrR8wIk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fnetcast.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>tDVxgpon1Qe4aeu4NyRFK6bXxpkjAAfhCh/AVgE47PQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fopenclosewindow.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Iu5lnS7jCUkod+6qO66bKUU98ZnyF20kNWJVK0DNnKo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fsagemcom.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Ldw0DwY77Z1IYbYb8nGjLWyo/JI48feUDSCYpXiNL78=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fsamsung_maple.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>rGYgAMbQkg35SDoamVUDEn5D7At8TxmJAOeZ9T/yf1g=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Fsamsung_tizen.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>g++FAUhEbMiibtybKkYZongFt7mGXrMEkyYkwLxguDM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fexit%2Ftivo.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>j4wnm7Sn4VELEGBRJaziQmllclYxLgh/MEB6cOILj3g=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fgoogletv.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>6KQR7SNSDg7aVIELhtr80RspfSK0P17ziNUwo2u5rEM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Flogging%2Fconsumelog.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>mGmfOf2Jaq6V3qcTW8c2ElfDIa9rZlvxIwe240LCIJk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Flogging%2Fdefault.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>U08Wql1Imeo5eqkxKaMJiTV3BteHzN5AUrXeOZGtIBw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Flogging%2Fjstestdriver.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>VvxSswOjwuTrlC+5s3kI8SvhbicDNksubfeIMRoC5fI=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Flogging%2Fonscreen.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+WJZGzB6CtiStGRqWEHek6DXR2jEMgtZ5MLYRUvdROo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Flogging%2Fsaving.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Kf9Uiwb/b9SzmWyv5FBTAuxeF4teO5I44CAnDlzkNJk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Flogging%2Fxhr.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>grQgfgLqZCB1H5vm2OEslqOoJXnw4QKKNHLagnbeWF8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fcehtml.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>SboJ2LQPSsIcds2y8KxcIVy35+IORVVeSlDUfyIqJq8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fcehtmlseekfinishedemitevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>RKD55ViS32A/mFqSKCPogp1/Zg7zrGsOW+CDyTNHdVc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fhtml5.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>uggZ9DQC9+Nhb/WSarLwqfoykeFgh4+gw0mXPwZnISA=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fhtml5memoryleakunfix.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>lJ4B6zRfAPqYkW+ONCbM6lewvy3SEJvZxtsWcek7QwQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fhtml5seekfinishedemitevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>/G/ETDqux6GwEXFhd8oPo6CukQaSbfSRrlztFXy5zxg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fhtml5untyped.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>kVNZDS/iih2eUIWfNTdl6SaYmxkthDf1sdqQRL0oaU8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Flive%2Fnone.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>2PX322FvS/Q1dIaXgwpLqeIdeP3ZDWBEICtNzKCGMHo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Flive%2Fplayable.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>BB18e8zF4uy3FA7suZpmsgwnY3X9yTQx+jCBYRDVJoQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Flive%2Frestartable.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>yN/Vys3YcQv4TlyIhpYxwp97EpuxYWkcT85mF0TIxC8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Flive%2Fseekable.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>coNZ4PdYIeo6C85C4Pn0otjP1niO1XQbDMQi8hSoPZY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fmediaplayer.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>KJWjglhfMFBejYo8D8v3i3h6XdbLIBQL3ZsSg32QYVo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fsamsung_maple.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>G+PHDUz4kgpN4sXTB0fcY3CKVsMxdotAM1nv3+9Br28=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fsamsung_streaming.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>kXqxziYvt5w3uSIpeawGeN1bT79ffcpXMtGzQXu8qoM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fmediaplayer%2Fseekfinishedemitevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>5u8KH99GNDDbb2mkOvaAWSNQh/txxo+ciZkMmY4A/Xg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fparentalguidance%2Fappdefaultpghandler.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>bAbu9/t9viZBLC5Xg1rwuNYESW1T3x9dmpMlEF+/M4Q=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fparentalguidance%2Fbasepghandler.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>7g7tP3oeXK713oHHfdvvNAD2hPJRQT04tDy2fsAxPXM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fparentalguidance%2Fpgchallengeresponse.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Q1acRs1iL156U6EauM71tMiZr7kFLbnV+4d5n+FqlsM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fparentalguidance%2Fyouviewpghandler.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>INOcVgBw5039r6Jcto2ZEEzaVGl/CKFfDcfduEnecEE=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fps3base.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>NUFhXGDNuCLt4wVmCaR/4/w6917HBhtjQRMBieBgAZc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fsanitiser.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>zv4Uz31mCPutvuw1TU55HcP/T+phaObRMw7I9qO6tKo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fsanitisers%2Fwhitelisted.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>YnbcFBECSo0Ld2Ne5HY5zMNGbfOmjUnV9JHIVhqM86A=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fstorage%2Fcookie.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>R7JUkbg3Kis6QZ910rUaKVmGCjNBw5ra7A1oGRdT9pQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fstorage%2Fsession.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Dxkj+LV4VCJpVvV9iQT/I81XNpe1naD1bLmtF21Rc10=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fstorage%2Fxboxpls.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>NZLlWILzTEKJm1hc5PqiR2ghUf+vOCc6r0sEA/QQHds=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fdevices%2Fwiiu.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>XP3lnHQ7pscnZKCEng1+MBQaFqxUyImiQntIF1akNiU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fafteralignevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>jin2zmsCHK60I5SNaTGgiacsAP5OPrFJ+pDZkng4LUY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fbeforealignevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>2tgnsM+VX6BbxqRPUG5nmmgfYnledejIauVyIpR3GvY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fbeforeselecteditemchangeevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>InH8uv4u6OcsH80XhCoZbmXCJ9xWm2yH8iIBfIEFySM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fblurevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>mZ3JMmguuyvkYDXzvey/XVobCpAPvntKNTSFETQU2MM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fcomponentevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>3/SLsXPPGF68pApdR+PdjMveIcjL4jfK6GKIPSUPYT0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fdataboundevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>3TuPQqkWEdMdhUfvWRNbJyeGXHoS2BH1xEUtxnuQ2zU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>y+CnYm125ua71xJtyY5l3mzgZ4Ygmf1wVg6FZ4zkBqY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Ffocusdelayevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>i9lJe3QrcToovubqp8pE8z4jCFU4jNbzfWynmoWlqSY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Ffocusevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>glyU1rZpQ7qdwcyS+jcyf27BbNGRvJyyZhAJUuF8XZs=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fkeyevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>oRIAspv46KVoAMU+/0FZU+Bb/61ELOXwuM6shqgj5nA=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fmediaerrorevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>4zIg0UWy+D2GA1pOYhy4Ku0z/qfjlaDM664c1iDo77E=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fmediaevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>rOqjTU7efgaDCEIfxyXv534Thlz5YA5Dx0e1WMMrTnw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fmediasourceerrorevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>eGVbYCzvm3SoaINNLhm6rB8CKHwOs5kBaIoizIiKVSw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fnetworkstatuschangeevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>SHlTsU0bHx5E+9XO+5zBRKxP1VZSc/0rN2KARzQHFaM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fpagechangeevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>5At1brmaFaYGsmXGHNTjTyL0xMwpQ4FdyZIHJDpbbxE=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fselecteditemchangeevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>95lft3jr10gf7lObjVoT/41TW/C3Tj99HyStauqo7bQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fselectevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>uAAdzFfTuUcHiQtUTANAvQKHY60c4Iu2z40AeA2w6KQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Fsliderchangeevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>F07Sy5vJBzB7Ew9qDEbVNuZ3OTPd8JH9/ly9jMy8MaM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Ftextchangeevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ue2ue4yfspDviy5ZK2GSVQ9q/Pooy7oUEI61iQCVzfU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Ftextpagechangeevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>S5mEBgiTH3IFTQBUEIWj09kloird+X+B+M1wD21kOdw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Ftunerpresentingevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+J0gnbFgOQnaxjr9GS9xpT3/HeRy3xCOJY3LfCRN3dc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Ftunerstoppedevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>3KtmCRkB6lbXk5OAWwT+FroBtvo1ZRANzCi2vLg6ihg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fevents%2Ftunerunavailableevent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>31nFcN6yJzlSjn2RZWgt2U8aX2w4Fcfxw0VGxzQLSqI=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fformatter.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>xLc8mWPNYytf+8h5KMmFFAAo2FzHmHpi9czfLSKEhow=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fhistorian.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+Wld1u98+jhCIK02w3esFXFsXa1pYYjgSPYwSCnKFgI=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fiterator.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>TGMHKuxnyEhWPUZCrD/jqKtoWxnrDEpsTd/DsPZ9Qzw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Flib%2Fdate.format.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ESTux9QfQoKBGN00C0t7MUkBOnVNjEagqoo6MCQqs8M=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Flib%2Fdate.parse.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>s0vbw6CXDhNb4IatXF38fM2w1rszI2HLQDA4fnz8c8o=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Flib%2Fintervalformat.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>yw8PRtd+I3yNNMWA10eavi7f/kAoiNZGv5tRcoUvKnU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Flib%2Fmath.seedrandom.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>L3lcDpEu9Otvl4n9SuyYanqg1lM1BDMRcjhIzz1zc7s=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Flib%2Frequire.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>mxXAvnxVch+ufOXxhKfiNI+ZWXp0yLJ8WZ0z+L1H0do=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Flib%2Fsha1.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>c1C2eG8ze9KhTorULq/yCTSgXxUd443Yo1zcwE+Gfuw=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Flib%2Fshifty.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>EEIMLL9AMt5sUOMmJJKouc1OGvkMA1jhwbAeFPqavt0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fmediasource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>bKE6/WXEWtw9/vRxR0s/94FCYS1me2V8SfG/o63b3ow=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fpackages%2Fcore.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>sRnQq4ImTcdodqDEp5Ci2sAO7O4hbFNCbbmebwB1Wsg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fruntimecontext.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>YRHEuBsWv6H085f6Xc4K41dKr/KdbuHR4/P6179Meo0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fstorageprovider.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>FwCGEi0m8sMZmWlaNVkK+IUaEEWeBMyyYpNU4BKtQBo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Ftargets%2Fcore.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Furlbuilder.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>5QAtQnaukM1v76T5zNlpWGAcNlqRLNyvIMVMiWWv6xY=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fvideosource.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>O3tm8o0A3MFn2zyZZlaSbuqTWJU/gFoS/8iADgiAKDs=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fbutton.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>UXN4xJjT5dBP/ja/If9YPJsppxXIlEb3vWjbS8m2TQQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>lNdqPVm6lM4eJPmyVus3xOp5/IusOED2MZMH11WbqMg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Faligners%2Faligner.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>xq5PV3slKToiuEY+6X7C+7NIOFT9XiJdUSKsmyd/LT0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Faligners%2Falignmentqueue.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>PGlKRk91myqgPNxcjGEGm6833wZ/sIuBL9TWg8YXWmo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fbinder.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>yt4g2MwgT44+EMBOo+m2x+I8lyrtieHXTvN9p8IO13Q=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fbinders%2Fbatchbinder.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>qA/c5083O14Nmjwq/w5F1+JDjgTm1inWdmp4NP+OAeI=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fcarouselcore.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>5Y19viwxwGGTnNWcODFYjx8Y+tjZNQttN3tnebdaGn0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fkeyhandlers%2Factivatefirsthandler.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ttzfuWPaE7PCw7zbYmCFYLAmpJEiqLOsebgm9yOaxPA=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fkeyhandlers%2Falignfirsthandler.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Ysknt7XBF5GGLin7QviPQaBDwAUrF4IOVdH00Ad3/is=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fkeyhandlers%2Fkeyhandler.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>JXPHHPwyG7K9t6yrndVrGdUdcXmZMuRBnFiskZzksmc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fmask.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+42IO+Uhf4a5J8khxTRih/p2IV+FvMhkm68SltqmQNc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fnavigators%2Fbookendednavigator.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>DB3sLKNFurrf3XjDafgF6iJea9BjfYwsOvs84YT8Idc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fnavigators%2Fnavigator.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>kEPDju+7nae2B7PgJu5ifBzRP1ZUYrJ/uB+2ZNTvrFU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fnavigators%2Fwrappingnavigator.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Fbgw8rj8iBeWZN8O76ec8O9qAdylJ8vuxtNE+f6QO8U=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Forientations%2Fhorizontal.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>pWtNmL54lPbGpwrz/U37FrvgZXHR64cXNdHBaJNVQdM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Forientations%2Fvertical.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>GsA49p05AL4cZyeGC1mNoPzjxwiPszD6HONth47b/Xk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fspinner.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>MdlDP4QyNvYKt2ufmRTelLIXHggHClvbPazO4npRrFo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Fcullingstrip.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>DsXyZy7cjSzRGWxt2DU5eigDytFz0XrS6ZnPMdrcV8A=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Fhidingstrip.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>bOQHrCoD/rSsTR9sNF+Sw9qFIWoTfBncKld6ZptDm2U=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Fattachedstate.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>w/+Peij4xb1vqF5T+5PhgCYuNLjg+V0ZYZcmp6X4b/Q=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Fhiddenstate.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>c9e87LLvt/Spw+3NrUmDa9Yee1tah4blrRo3XyS3hR8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Finitstate.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>flDNNo3GScjgWny23qyacFh5YufRKBTh9Vjrc/mcSBo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Frenderedstate.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>wDI4d1hb4cVue9nA1Hc5GRkwU3IfM8tAuNdqzBUmJoM=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Fstate.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>PrqsjnfJXXIdq5oB8G/sihqE0S8nfg+CocU+FAv5+Hg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Fstates.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Vd3F/QJYi1aMnZ8SEVdsadU+CYpKkM3QVb/x/dR/oyo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Fvisibilitystates.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>mdj9bjtp/WjhpQ1Ps4BwaRbOh24/8rmwq4gAbf4IoA4=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Fvisiblestate.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>EjxIV5Oa9bmNAbGQlZEhZWsVn4Skbwd2gC+Mwm0xkqg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Futility%2Fwidgetcontext.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>VBmwS5/dCY6lUz7l59Z89JCH8lFLUV+rf2HglrtBYeE=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Fwidgetstrip.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>zRzyjgvBThR+IjZxDSQuDQ0CMIz8RsHw4DR9Blyy7/o=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcarousel%2Fstrips%2Fwrappingstrip.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>csq+YRbgqZMgFLmrQWI22tGAd6AX2QZyEZ3xGdnpzMU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcomponent.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>cPBG4HKzGD6elTgZgFpyIi27eDRDmMsdkZz+cgER4m0=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcomponentcontainer.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>UdkBH73onZOEsh1BZNU8hws7iXUF87h4Xpq94ziGpFo=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fcontainer.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Ku9iA7zvCqSRGHRl8WtmTDVn4o9wNbAwL3uylMHc4a8=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fgrid.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>F5Gh2NyC95LW+/FQmFnOpqldO0d3qybYEOLSPLQJeIQ=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fhorizontalcarousel.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>UwqPx52MfTkU4HEB/jFtSZpjql/NbxtBxvlHbNhR3Zs=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fhorizontallist.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Hpa2eYiAZftiZn6xfTjD4evNY6wGopU1EI39OeKdmFA=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fhorizontalprogress.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>8dKdJxzRgOlguZ83p6P6uGaqFGs+wtgmi9YtBRiGJMg=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fhorizontalslider.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>WUNbGk/Yhw7XFrYG171DHHfAZ3BM8lKFSkcZlkkjxtk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fimage.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>19mN2N/u87HEn+jSj4WxwPVc+yFEJNAyJzgyVWvvEVU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fkeyboard.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>agJ/70TPV+WWOosx4mRiD9UqE4dPsGTAYCa/CjDTwcU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Flabel.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>vd/344IDPFzdk+FkbZXZqDmBQRQYIs72wOQ3vzFpaIU=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Flist.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+2dsU1EZBFZ/ZXY9/Oy0Qv4fTim8Uq3YJ+o/Gr3U7uc=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Flistitem.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>L7hqnHnuxIuEZzY2CbXd3JxfYYNF6BQmPk6/iTL6654=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fscrubbar.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>AFGBI7CRl6AZSeSVJbIGBcYxkTCGCDxeefMWG/7OktI=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fstate_view_container.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ikaJ9I/eXR091X7wmgx+sc3G/qGKttDMiyvCCaHOuSk=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Ftextpager.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>IeT1N/aYzFTlH9bvjhVdcsJ/YyF6r3YYWwssxLvxO4A=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fverticallist.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>rlLhN+EGoWQBkiM/snqMthRreOJj6XHyiThvaXQa1Gs=</DigestValue>
+</Reference>
+<Reference URI="node_modules%2Ftal%2Fstatic%2Fscript%2Fwidgets%2Fwidget.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>C7lHbphKvcRbGW/qTPDplwnAfvd7Ba4r/q8YVL9NZ3A=</DigestValue>
+</Reference>
+<Reference URI="package.json">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>n0IqxcIDYQwwKnuoAFSkW8/vMAt8k5yhrdomnBJSv58=</DigestValue>
+</Reference>
+<Reference URI="src%2Fapp.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>pHhDjaHimsGcc0W6kk70Iv+kPpveHW6cH9yJMaMBFxE=</DigestValue>
+</Reference>
+<Reference URI="src%2Fcomponents%2Fhome.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>u98z5SuhxqsI/6x3g4zA63cMbL4ytMm3JxFLRqxLLps=</DigestValue>
+</Reference>
+<Reference URI="src%2Fdevices%2Fmediaplayer%2Fsamsung_tizen.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>i96ssxTImtYqb3p3dCZlEi9ln5IZsJwyUBJBZCht38U=</DigestValue>
+</Reference>
+<Reference URI="src%2Flayouts%2F1080p.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ZG5HlPN05QsbRAB0GVYrxUzHXDITpNb/zUA+6bonwkM=</DigestValue>
+</Reference>
+<Reference URI="src%2Ftheme%2Fbase.css">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>9cqpzhd2x84SAx4Rrqa/MxjgiIeShm/LOt9P2EWeJ0Q=</DigestValue>
+</Reference>
+<Reference URI="src%2Ftheme%2Fbase.dist.css">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>eABGBL3r/OHSrAQnAimfCWzhaVRafmL4nJ8OQfHTe4M=</DigestValue>
+</Reference>
+<Reference URI="src%2Ftheme%2Fimages%2Floader.gif">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>RBK985E+l3NyBi+P9cUXNvjOH4P7+EqrWsAaH8LCk8Q=</DigestValue>
+</Reference>
+<Reference URI="src%2Ftheme%2Fimages%2Floading-screen.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>AGJDrYaIZIgKIqT/I1BTox5sk7FZLFLR+ndVzrO/fLw=</DigestValue>
+</Reference>
+<Reference URI="src%2Ftheme%2Fimages%2FplayButton.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>bzTuIXhq+PDB3khTQ/x/U0H4wmc5G1jic0+IB7i6tP8=</DigestValue>
+</Reference>
+<Reference URI="src%2Ftheme%2Flayouts%2F1080p.css">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>lq9CcM+y4pr/4Ba62rgZX4vhQGae9dqvfNQG0ZbvgI4=</DigestValue>
+</Reference>
+<Reference URI="#prop">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>lpo8tUDs054eLlBQXiDPVDVKfw30ZZdtkRs1jd7H5K8=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+DdvT7dHD4J249oXmjOiFK43RcvoVq56DCZmh6qFg1ePH640m3kg5tvKJr31AQpI7xk6HOiUOFsQE
+WJRujmqy311gr5eBsl3anBuWaKSYIpSiDDTzWrU4Vfxk7Ea+ZbLReuYidzXTVzo+kzm3bSIMZPEk
+2X1TkRQc0yDUmrA1/Vo=
+</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>
+MIIDDzCCAfegAwIBAgIGAV0M8nMfMA0GCSqGSIb3DQEBBQUAMFYxGjAYBgNVBAoMEVRpemVuIEFz
+c29jaWF0aW9uMRowGAYDVQQLDBFUaXplbiBBc3NvY2lhdGlvbjEcMBoGA1UEAwwTVGl6ZW4gRGV2
+ZWxvcGVycyBDQTAeFw0xMjExMDEwMDAwMDBaFw0xOTAxMDEwMDAwMDBaMIGKMQswCQYDVQQGEwJV
+QTENMAsGA1UEBwwES3lpdjEhMB8GA1UECgwYSG9wZSBNZWRpYSBHcm91cCBVa3JhaW5lMQswCQYD
+VQQLDAJJVDEiMCAGCSqGSIb3DQEJARYTZC5zaG51cmVua29AaG9wZS51YTEYMBYGA1UEAwwPRGVu
+eXMgU2hudXJlbmtvMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXkR+MYOlNTuOm69kn6D1e
+7W8xl6kUuDnMm9o18Bjq+l8XQWFWpCFnVICw5uQKlHOuDkHt32xXAI3YVABUZyQ3S+PDFQauKK9d
+ezZBR1caeOKjLfBMzKtNhGs+OSeTm5WWccDeU5kiSzN73JcQePgYapRVJt8Aul2IwWRF61um4wID
+AQABozIwMDAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAN
+BgkqhkiG9w0BAQUFAAOCAQEAAR8in8NxfO40ZOcd18kzRtGC+I3c8ymbEvoDG08QBPl1ECEE2AKJ
+GF5g8YAK4MymNuxS5b9iJwxprLg7zvloVXB8t4Tpt337B45MWyX/uJwFnToyNN4mSxASL2/k8KXo
+kBpotMHwBwLvbZVoJSD6bDHAnFpCvilnpj7oI0YSsMtvuEF1ZMf8CKi+oR/BOfXQSOcaLKd2tcg7
+cOvLKDCyIU5mDHeI0MbUE4OCuNUopTTLMM4HV5CIkKH12Ki3RDqFKxczOUHT6POICG9caqPrTtkw
+u0tVFuVofsf9aYkJxXBp9Ar0qvtiXISDYbmA2FyQT0xc8fJyCrhvOiDfKIMLBQ==
+</X509Certificate>
+<X509Certificate>
+MIIDOTCCAiGgAwIBAgIBATANBgkqhkiG9w0BAQUFADBYMRowGAYDVQQKDBFUaXplbiBBc3NvY2lh
+dGlvbjEaMBgGA1UECwwRVGl6ZW4gQXNzb2NpYXRpb24xHjAcBgNVBAMMFVRpemVuIERldmVsb3Bl
+cnMgUm9vdDAeFw0xMjAxMDEwMDAwMDBaFw0yNzAxMDEwMDAwMDBaMFYxGjAYBgNVBAoMEVRpemVu
+IEFzc29jaWF0aW9uMRowGAYDVQQLDBFUaXplbiBBc3NvY2lhdGlvbjEcMBoGA1UEAwwTVGl6ZW4g
+RGV2ZWxvcGVycyBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANVGhRGmMIUyBA7o
+PCz8Sxut6z6HNkF4oDIuzuKaMzRYPeWodwe9O0gmqAkToQHfwg2giRhE5GoPld0fq+OYMMwSasCu
+g8dwODx1eDeSYVuOLWRxpAmbTXOsSFi6VoWeyaPEm18JBHvZBsU5YQtgZ6Kp7MqzvQg3pXOxtajj
+vyHxiatJl+xXrHgcXC1wgyG3buty7u/Fi2mvKXJ0PRJcCjjK81dqe/Vr20sRUCrbk02zbm5ggFt/
+jIEhV8wbFRQpliobc7J4dSTKhFfrqGM8rdd54LYhD7gSI1CFSe16pUXfcVR7FhJztRaiGLnCrwBE
+dyTZ248+D4L/qR/D0axb3jcCAwEAAaMQMA4wDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOC
+AQEAnOXXQ/1O/QTDHyrmQDtFziqPY3xWlJBqJtEqXiT7Y+Ljpe66e+Ee/OjQMlZe8gu21/8cKklH
+95RxjopMWCVedXDUbWdvS2+CdyvVW/quT2E0tjqIzXDekUTYwwhlPWlGxvfj3VsxqSFq3p8Brl04
+1Gx5RKAGyKVsMfTLhbbwSWwApuBUxYfcNpKwLWGPXkysu+HctY03OKv4/xKBnVWiN8ex/Sgesi0M
++OBAOMdZMPK32uJBTeKFx1xZgTLIhk45V0hPOomPjZloiv0LSS11eyd451ufjW0iHRE7WlpR6EvI
+W6TFyZgMpQq+kg4hWl2SBTf3s2VI8Ygz7gj8TMlClg==
+</X509Certificate>
+</X509Data>
+</KeyInfo>
+<Object Id="prop"><SignatureProperties xmlns:dsp="http://www.w3.org/2009/xmldsig-properties"><SignatureProperty Id="profile" Target="#AuthorSignature"><dsp:Profile URI="http://www.w3.org/ns/widgets-digsig#profile"></dsp:Profile></SignatureProperty><SignatureProperty Id="role" Target="#AuthorSignature"><dsp:Role URI="http://www.w3.org/ns/widgets-digsig#role-author"></dsp:Role></SignatureProperty><SignatureProperty Id="identifier" Target="#AuthorSignature"><dsp:Identifier></dsp:Identifier></SignatureProperty></SignatureProperties></Object>
+</Signature>
