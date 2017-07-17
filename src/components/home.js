@@ -233,7 +233,7 @@ define(
                             }
                             break;
 
-                        // BACK button
+                        // RETURN button
                         case KeyEvent.VK_BACK:
                             self.toggleExitConfirmation(true);
                             break;
@@ -277,10 +277,13 @@ define(
 
             showErrorMessage: function (title, message) {
                 var $errorPopup = this.elements.error.getChildWidget('errorPopup');
+
                 var $title = $errorPopup.getChildWidget('errorTitle');
-                var $message = $errorPopup.getChildWidget('errorMessage');
                 $title.setText(title + ' Error');
+
+                var $message = $errorPopup.getChildWidget('errorMessage');
                 $message.setText(message);
+
                 this.elements.error.focus();
                 this.setElementVisible(this.elements.error);
             },
