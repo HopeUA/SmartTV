@@ -246,7 +246,7 @@ define(
                             }
                             break;
 
-                        // BACK button
+                        // RETURN button
                         case KeyEvent.VK_BACK:
                             self.toggleExitConfirmation(true);
                             break;
@@ -290,10 +290,13 @@ define(
 
             showErrorMessage: function (title, message) {
                 var $errorPopup = this.elements.error.getChildWidget('errorPopup');
+
                 var $title = $errorPopup.getChildWidget('errorTitle');
-                var $message = $errorPopup.getChildWidget('errorMessage');
                 $title.setText(title + ' Error');
+
+                var $message = $errorPopup.getChildWidget('errorMessage');
                 $message.setText(message);
+
                 this.elements.error.focus();
                 this.setElementVisible(this.elements.error);
             },
@@ -373,7 +376,7 @@ define(
              */
             visibilityChangeListener: function () {
                 var self = this;
-                document.addEventListener('visibilitychange', function (e) {
+                document.addEventListener('visibilitychange', function () {
                     if(document.hidden) {
                         self.mediaPlayer.stop();
                         self.mediaPlayer.reset();
