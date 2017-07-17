@@ -52,16 +52,20 @@ define(
                         case MediaPlayer.EVENT.ERROR:
                             self.showErrorMessage('Media Player', e.errorMessage);
                             break;
+
                         case MediaPlayer.EVENT.PLAYING:
                             self.setElementVisible(self.elements.loader, false);
                             self.setElementVisible(self.elements.play, false);
                             break;
+
                         case MediaPlayer.EVENT.PAUSED:
                             self.setElementVisible(self.elements.play);
                             break;
+
                         case MediaPlayer.EVENT.BUFFERING:
                             self.setElementVisible(self.elements.loader);
                             break;
+
                         case MediaPlayer.EVENT.STOPPED:
                             break;
                     }
@@ -220,11 +224,13 @@ define(
                                 self.mediaPlayer.resume();
                             }
                             break;
+
                         case KeyEvent.VK_PAUSE:
                             if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
                             }
                             break;
+
                         case KeyEvent.VK_PLAY_PAUSE:
                             if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
@@ -344,6 +350,7 @@ define(
                         case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
                             self.toggleNetworkStatusAlert(true);
                             break;
+
                         case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
                             self.toggleNetworkStatusAlert(false);
                             break;
