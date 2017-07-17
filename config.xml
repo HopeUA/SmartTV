@@ -13,7 +13,7 @@
   <autoUpdate itemtype="boolean">y</autoUpdate>
 
   <widgetname itemtype="string">Hope.UA</widgetname>
-  <ver itemtype="string">1.100</ver>
+  <ver itemtype="string">1.200</ver>
   <description itemtype="string">Телеканал «Надія» — це телебачення про найцікавіше для тих, хто любить проводити свій час з користю.</description>
   <width itemtype="string">960</width>
   <height itemtype="string">540</height>
