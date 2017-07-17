@@ -9,7 +9,8 @@ define(
         'antie/events/keyevent',
         'antie/events/networkstatuschangeevent',
         'antie/runtimecontext',
-        'antie/devices/mediaplayer/mediaplayer'
+        'antie/devices/mediaplayer/mediaplayer',
+        'hope/i18n!hope/nls/strings'
     ],
     function (
         Widget,
@@ -21,7 +22,8 @@ define(
         KeyEvent,
         NetworkStatusChangeEvent,
         RuntimeContext,
-        MediaPlayer
+        MediaPlayer,
+        Strings
     ) {
         return Component.extend({
             init: function () {
@@ -126,14 +128,14 @@ define(
                 var exitPopup = new Component('exitPopup');
                 exitPopup.addClass('popup');
 
-                var message = new Label('exitMessage', 'Do you want to exit?');
+                var message = new Label('exitMessage', Strings.exit.message);
                 message.addClass('message');
                 exitPopup.appendChildWidget(message);
 
                 var buttonContainer = new HorizontalList('buttonContainer');
 
                 var yesButton = new Button('yesButton');
-                yesButton.appendChildWidget(new Label('Yes'));
+                yesButton.appendChildWidget(new Label(Strings.exit.yes));
                 yesButton.addEventListener('select', function () {
                     try {
                         self.getCurrentApplication().exit();
@@ -145,7 +147,7 @@ define(
                 buttonContainer.appendChildWidget(yesButton);
 
                 var noButton = new Button('noButton');
-                noButton.appendChildWidget(new Label('No'));
+                noButton.appendChildWidget(new Label(Strings.exit.no));
                 noButton.addEventListener('select', function () {
                     self.toggleExitConfirmation(false);
                 });
@@ -203,7 +205,7 @@ define(
                 var networkStatusPopup = new Component('networkStatusPopup');
                 networkStatusPopup.addClass('popup');
 
-                var message = new Label('messageNetworkStatus', 'Please check network connection...');
+                var message = new Label('networkStatusMessage', Strings.network);
                 message.addClass('message');
                 networkStatusPopup.appendChildWidget(message);
 
