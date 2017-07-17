@@ -55,16 +55,20 @@ define(
                         case MediaPlayer.EVENT.ERROR:
                             self.showErrorMessage('Media Player', e.errorMessage);
                             break;
+
                         case MediaPlayer.EVENT.PLAYING:
                             self.setElementVisible(self.elements.loader, false);
                             self.setElementVisible(self.elements.play, false);
                             break;
+
                         case MediaPlayer.EVENT.PAUSED:
                             self.setElementVisible(self.elements.play);
                             break;
+
                         case MediaPlayer.EVENT.BUFFERING:
                             self.setElementVisible(self.elements.loader);
                             break;
+
                         case MediaPlayer.EVENT.STOPPED:
                             break;
                     }
@@ -229,11 +233,13 @@ define(
                                 self.mediaPlayer.resume();
                             }
                             break;
+
                         case KeyEvent.VK_PAUSE:
                             if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
                             }
                             break;
+
                         case KeyEvent.VK_PLAY_PAUSE:
                             if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
@@ -242,7 +248,7 @@ define(
                             }
                             break;
 
-                        // BACK button
+                        // RETURN button
                         case KeyEvent.VK_BACK:
                             self.toggleExitConfirmation(true);
                             break;
@@ -286,10 +292,13 @@ define(
 
             showErrorMessage: function (title, message) {
                 var $errorPopup = this.elements.error.getChildWidget('errorPopup');
+
                 var $title = $errorPopup.getChildWidget('errorTitle');
-                var $message = $errorPopup.getChildWidget('errorMessage');
                 $title.setText(title + ' Error');
+
+                var $message = $errorPopup.getChildWidget('errorMessage');
                 $message.setText(message);
+
                 this.elements.error.focus();
                 this.setElementVisible(this.elements.error);
             },
@@ -341,6 +350,7 @@ define(
                         case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
                             self.toggleNetworkStatusAlert(true);
                             break;
+
                         case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
                             self.toggleNetworkStatusAlert(false);
                             break;
@@ -355,6 +365,7 @@ define(
                          case webapis.network.NetworkState.GATEWAY_DISCONNECTED:
                              self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
                              break;
+
                          case webapis.network.NetworkState.GATEWAY_CONNECTED:
                              self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
                              break;
@@ -367,7 +378,7 @@ define(
              */
             visibilityChangeListener: function () {
                 var self = this;
-                document.addEventListener('visibilitychange', function (e) {
+                document.addEventListener('visibilitychange', function () {
                     if(document.hidden) {
                         self.mediaPlayer.stop();
                         self.mediaPlayer.reset();
@@ -377,6 +388,5 @@ define(
                 });
             }
         });
-
     }
 );
