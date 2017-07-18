@@ -23,7 +23,7 @@ define(
         NetworkStatusChangeEvent,
         RuntimeContext,
         MediaPlayer,
-        Strings
+        $
     ) {
         return Component.extend({
             init: function () {
@@ -125,14 +125,14 @@ define(
                 var exitPopup = new Component('exitPopup');
                 exitPopup.addClass('popup');
 
-                var message = new Label('exitMessage', Strings.exit.message);
+                var message = new Label('exitMessage', $.exit.message);
                 message.addClass('message');
                 exitPopup.appendChildWidget(message);
 
                 var buttonContainer = new HorizontalList('buttonContainer');
 
                 var yesButton = new Button('yesButton');
-                yesButton.appendChildWidget(new Label(Strings.exit.yes));
+                yesButton.appendChildWidget(new Label($.exit.yes));
                 yesButton.addEventListener('select', function () {
                     try {
                         self.getCurrentApplication().exit();
@@ -144,7 +144,7 @@ define(
                 buttonContainer.appendChildWidget(yesButton);
 
                 var noButton = new Button('noButton');
-                noButton.appendChildWidget(new Label(Strings.exit.no));
+                noButton.appendChildWidget(new Label($.exit.no));
                 noButton.addEventListener('select', function () {
                     self.toggleExitConfirmation(false);
                 });
@@ -202,7 +202,7 @@ define(
                 var networkStatusPopup = new Component('networkStatusPopup');
                 networkStatusPopup.addClass('popup');
 
-                var message = new Label('messageNetworkStatus', Strings.network);
+                var message = new Label('messageNetworkStatus', $.network);
                 message.addClass('message');
                 networkStatusPopup.appendChildWidget(message);
 
