@@ -33,7 +33,7 @@ gulp.task('clean', async () => {
     }, []);
 
     for (const dir of dirs) {
-        await fs.ensureDir(dir);
+        await fs.emptyDir(dir);
     }
 });
 
@@ -43,8 +43,26 @@ gulp.task('clean', async () => {
  *
  * Copy vendor libraries to platforms
  */
-gulp.task('build:vendor', () => {
+gulp.task('build:vendor', async () => {
+    const tal = path.resolve(__dirname, 'node_modules/tal/static/script/');
+    const modules = [
+        path.resolve(__dirname, 'node_modules/requirejs/require.js'),
+        path.resolve(__dirname, 'src/i18n.js')
+    ];
 
+    const dirs = platforms.reduce((dirs, platform) => {
+        return dirs.concat(
+            path.join(platformsRoot, platform, 'vendor')
+        );
+    }, []);
+
+    for (const dir of dirs) {
+        await fs.copy(tal, path.join(dir, 'tal'));
+
+        for (const module of modules) {
+            await fs.copy(module, path.join(dir, path.basename(module)));
+        }
+    }
 });
 
 /**
