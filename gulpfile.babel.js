@@ -44,10 +44,19 @@ gulp.task('clean', async () => {
  * Copy vendor libraries to platforms
  */
 gulp.task('build:vendor', async () => {
-    const tal = path.resolve(__dirname, 'node_modules/tal/static/script/');
-    const modules = [
-        path.resolve(__dirname, 'node_modules/requirejs/require.js'),
-        path.resolve(__dirname, 'node_modules/i18n/i18n.js')
+    const libs = [
+        {
+            source: 'node_modules/tal/static/script/',
+            dest: 'tal'
+        },
+        {
+            source: 'node_modules/requirejs/require.js',
+            dest: 'require.js'
+        },
+        {
+            source: 'node_modules/i18n/i18n.js',
+            dest: 'i18n.js'
+        }
     ];
 
     const dirs = platforms.map((platform) => {
@@ -55,10 +64,11 @@ gulp.task('build:vendor', async () => {
     });
 
     for (const dir of dirs) {
-        await fs.copy(tal, path.join(dir, 'tal'));
-
-        for (const module of modules) {
-            await fs.copy(module, path.join(dir, path.basename(module)));
+        for (const lib of libs) {
+            await fs.copy(
+                path.resolve(__dirname, lib.source),
+                path.join(dir, lib.dest)
+            );
         }
     }
 });
@@ -71,6 +81,6 @@ gulp.task('build:vendor', async () => {
  * Process css.
  * Inject config.
  */
-gulp.task('build:src', () => {
+gulp.task('build:src', async () => {
 
 });
