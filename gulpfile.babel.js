@@ -47,14 +47,12 @@ gulp.task('build:vendor', async () => {
     const tal = path.resolve(__dirname, 'node_modules/tal/static/script/');
     const modules = [
         path.resolve(__dirname, 'node_modules/requirejs/require.js'),
-        path.resolve(__dirname, 'src/i18n.js')
+        path.resolve(__dirname, 'node_modules/i18n/i18n.js')
     ];
 
-    const dirs = platforms.reduce((dirs, platform) => {
-        return dirs.concat(
-            path.join(platformsRoot, platform, 'vendor')
-        );
-    }, []);
+    const dirs = platforms.map((platform) => {
+        return path.join(platformsRoot, platform, 'vendor');
+    });
 
     for (const dir of dirs) {
         await fs.copy(tal, path.join(dir, 'tal'));
