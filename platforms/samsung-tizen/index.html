@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="src/theme/base.dist.css"/>
+    <link rel="stylesheet" href="src/theme/base.css"/>
 </head>
 <body>
 
@@ -9,7 +9,11 @@
 <div id="app"></div>
 
 <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
-<script data-main="src/app" src="vendor/require.js"></script>
-
+<script data-main="src/app" src="vendor/requirejs/require.js"></script>
+<script>
+    // Register keys
+    var keys = ['MediaPlay','MediaPause','MediaPlayPause'];
+    tizen.tvinputdevice.registerKeyBatch(keys);
+</script>
 </body>
 </html>

@@ -10,7 +10,7 @@ define(
         'antie/events/networkstatuschangeevent',
         'antie/runtimecontext',
         'antie/devices/mediaplayer/mediaplayer',
-        'vendor/i18n!hope/nls/strings'
+        'i18n!hope/nls/strings'
     ],
     function (
         Widget,
