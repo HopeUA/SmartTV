@@ -4,6 +4,7 @@ import path from 'path';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import fs from 'fs-extra';
+import autoprefixer from 'autoprefixer';
 
 const $ = gulpLoadPlugins();
 
@@ -51,12 +52,21 @@ gulp.task('build:vendor', async () => {
         },
         {
             source: 'node_modules/requirejs/require.js',
-            dest: 'require.js'
+            dest: 'requirejs/require.js'
         },
         {
             source: 'node_modules/i18n/i18n.js',
-            dest: 'i18n.js'
+            dest: 'requirejs/i18n.js'
+        },
+        {
+            source: 'node_modules/requirejs-plugins/src/json.js',
+            dest: 'requirejs/json.js'
+        },
+        {
+            source: 'node_modules/requirejs-plugins/lib/text.js',
+            dest: 'requirejs/text.js'
         }
+
     ];
 
     const dirs = platforms.map((platform) => {
@@ -82,5 +92,36 @@ gulp.task('build:vendor', async () => {
  * Inject config.
  */
 gulp.task('build:src', async () => {
+    const src = path.resolve(__dirname, 'src/');
+    const dirs = platforms.map((platform) => {
+        return path.join(platformsRoot, platform, 'src');
+    });
+    const filterFunc = (src, dest) => {
+        return (src.search(/base\.css/g) === -1);
+    };
 
+    for (const dir of dirs) {
+        await fs.copy(src, dir, { filter: filterFunc });
+    }
+});
+
+/**
+ * Task: Build
+ * Subtask: Css
+ *
+ * Compile css with postcss
+ */
+gulp.task('build:css', () => {
+    const dirs = platforms.map((platform) => {
+        return path.join(platformsRoot, platform, 'src/theme');
+    });
+
+    const stream = gulp.src('./src/theme/base.css')
+        .pipe($.postcss([ autoprefixer() ]));
+
+    for (const dir of dirs) {
+        stream.pipe(gulp.dest(dir));
+    }
+
+    return stream;
 });

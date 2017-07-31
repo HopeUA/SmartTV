@@ -2,7 +2,10 @@
   "name": "@hope/smart-tv",
   "scripts": {
     "clean": "gulp clean",
-    "build:vendor": "gulp build:vendor"
+    "build:vendor": "gulp build:vendor",
+    "build:src": "gulp build:src",
+    "build:css": "gulp build:css",
+    "build": "npm run clean && npm run build:vendor && npm run build:src && npm run build:css"
   },
   "babel": {
     "plugins": [
@@ -13,14 +16,21 @@
   "dependencies": {
     "i18n": "git+https://github.com/requirejs/i18n.git",
     "requirejs": "^2.3.3",
+    "requirejs-plugins": "^1.0.2",
     "tal": "^7.4.3"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.2",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-register": "^6.24.1",
     "fs-extra": "^4.0.0",
     "gulp": "^3.9.1",
-    "gulp-load-plugins": "^1.5.0"
-  }
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-postcss": "^7.0.0"
+  },
+  "browserslist": [
+    "chrome >= 21",
+    "firefox >= 20"
+  ]
 }
