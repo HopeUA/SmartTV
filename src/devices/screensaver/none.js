@@ -1,12 +1,13 @@
 define(
     'hope/devices/screensaver/none',
     [
+        'antie/devices/device',
         'hope/devices/screensaver/screensaver'
     ],
-    function(SS) {
+    function(Device, ScreenSaver) {
         'use strict';
 
-        var ScreenSaver = SS.extend({
+        var SS = ScreenSaver.extend({
             init: function () {
             },
 
@@ -17,13 +18,13 @@ define(
             }
         });
 
-        var instance = new ScreenSaver();
+        var instance = new SS();
 
         // Mixin this Screen Saver implementation, so that device.getScreenSaver() returns the correct implementation for the device
         Device.prototype.getScreenSaver = function() {
             return instance;
         };
 
-        return ScreenSaver;
+        return SS;
     }
 );
