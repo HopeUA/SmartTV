@@ -1,8 +1,8 @@
 define(
     [
         'antie/widgets/widget',
-        'antie/widgets/container',
         'antie/widgets/component',
+        'antie/widgets/container',
         'antie/widgets/horizontallist',
         'antie/widgets/button',
         'antie/widgets/label',
@@ -124,7 +124,7 @@ define(
             },
 
             createPlayButton: function () {
-                var playButton = new Component('playButton');
+                var playButton = new Container('playButton');
 
                 return playButton;
             },
@@ -132,7 +132,7 @@ define(
             createExitPopup: function () {
                 var self = this;
                 
-                var exitPopup = new Component('exitPopup');
+                var exitPopup = new Container('exitPopup');
                 exitPopup.addClass('popup');
 
                 var message = new Label('exitMessage', $.exit.message);
@@ -173,7 +173,7 @@ define(
             createErrorMessagePopup: function () {
                 var self = this;
 
-                var errorPopup = new Component('errorPopup');
+                var errorPopup = new Container('errorPopup');
                 errorPopup.addClass('popup');
 
                 var title = new Label('errorTitle', 'error');
@@ -203,13 +203,13 @@ define(
             },
 
             createLoader: function () {
-                var loader = new Component('loader');
+                var loader = new Container('loader');
 
                 return loader;
             },
 
             createNetworkStatusPopup: function () {
-                var networkStatusPopup = new Component('networkStatusPopup');
+                var networkStatusPopup = new Container('networkStatusPopup');
                 networkStatusPopup.addClass('popup');
 
                 var message = new Label('networkStatusMessage', $.network);
@@ -263,7 +263,7 @@ define(
             },
             
             wrapPopup: function(popup) {
-                var popupWrap = new Component();
+                var popupWrap = new Container();
                 popupWrap.addClass('popupWrap');
                 popupWrap.appendChildWidget(popup);
                 
