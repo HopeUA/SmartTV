@@ -10,6 +10,7 @@ define(
         'antie/events/networkstatuschangeevent',
         'antie/runtimecontext',
         'antie/devices/mediaplayer/mediaplayer',
+        'hope/devices/screensaver/screensaver',
         'i18n!hope/nls/strings'
     ],
     function (
@@ -23,6 +24,7 @@ define(
         NetworkStatusChangeEvent,
         RuntimeContext,
         MediaPlayer,
+        ScreenSaver,
         $
     ) {
         return Component.extend({
@@ -30,6 +32,7 @@ define(
                 var self = this;
                 this._super('homePage');
 
+                this.ss = RuntimeContext.getDevice().getScreenSaver();
                 this.initElements();
                 this.registerNetworkStatusListener();
                 this.visibilityChangeListener();
@@ -75,7 +78,7 @@ define(
 
                     if (e.type === MediaPlayer.EVENT.PLAYING) {
                         self.toggleScreenSaver(false);
-                    } else {
+                    } else if (e.type !== MediaPlayer.EVENT.STATUS) {
                         self.toggleScreenSaver(true);
                     }
                 });
@@ -329,18 +332,15 @@ define(
              * TIZEN Screen Saver
              */
             toggleScreenSaver: function(show) {
-                var self = this;
                 if (show === undefined) {
                     show = true;
                 }
 
-                webapis.appcommon.setScreenSaver(
-                    show ? webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_ON : webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_OFF,
-                    function() {},
-                    function(error) {
-                        self.showErrorMessage('Screen Saver', error.message);
-                    }
-                );
+                try {
+                    show ? this.ss.on() : this.ss.off();
+                } catch (error) {
+                    this.showErrorMessage('Screen Saver', error.message);
+                }
             },
 
             registerNetworkStatusListener: function () {

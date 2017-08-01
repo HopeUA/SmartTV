@@ -7,6 +7,7 @@
         "modifiers": [
           "antie/devices/anim/css3",
           "hope/devices/mediaplayer/samsung_tizen",
+          "hope/devices/screensaver/samsung_tizen",
           "antie/devices/mediaplayer/live/seekable",
           "antie/devices/broadcastsource/tizentvsource",
           "antie/devices/data/json2",
