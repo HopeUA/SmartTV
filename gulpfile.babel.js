@@ -131,4 +131,4 @@ gulp.task('build:css', () => {
  *
  * Combined task
  */
-gulp.task('build', $.sequence('clean', ['build:vendor', 'build:src', 'build:css']));
+gulp.task('build', $.sequence('clean', ['build:vendor', 'build:src'], 'build:css'));
