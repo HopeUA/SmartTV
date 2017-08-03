@@ -11,6 +11,7 @@ define(
         'antie/runtimecontext',
         'antie/devices/mediaplayer/mediaplayer',
         'hope/devices/screensaver/screensaver',
+        'hope/devices/network/network',
         'i18n!hope/nls/strings'
     ],
     function (
@@ -25,6 +26,7 @@ define(
         RuntimeContext,
         MediaPlayer,
         ScreenSaver,
+        Network,
         $
     ) {
         return Component.extend({
@@ -32,9 +34,9 @@ define(
                 var self = this;
                 this._super('homePage');
 
-                this.ss = RuntimeContext.getDevice().getScreenSaver();
+                this.screenSaver = this.createScreenSaver();
                 this.initElements();
-                this.registerNetworkStatusListener();
+                this.registerNetworkManager();
                 this.visibilityChangeListener();
 
                 this.keyHandler = this.createKeyHandler();
@@ -123,6 +125,30 @@ define(
                 this.elements = elements;
             },
 
+            registerNetworkManager: function () {
+                var network = RuntimeContext.getDevice().getNetworkManager();
+                network.addEventCallback(this, function (e) {
+                    if (e.type === 'networkstatuschange') {
+                        switch (e.networkStatus) {
+                            case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
+                                this.toggleNetworkStatusAlert(true);
+                                break;
+
+                            case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
+                                this.toggleNetworkStatusAlert(false);
+                                switch (this.mediaPlayer.getState()) {
+                                    case MediaPlayer.STATE.ERROR:
+                                        this.mediaPlayer.reset();
+                                    case MediaPlayer.STATE.EMPTY:
+                                        this.startLive();
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                });
+            },
+
             createPlayButton: function () {
                 var playButton = new Container('playButton');
 
@@ -131,7 +157,7 @@ define(
 
             createExitPopup: function () {
                 var self = this;
-                
+
                 var exitPopup = new Container('exitPopup');
                 exitPopup.addClass('popup');
 
@@ -261,12 +287,18 @@ define(
 
                 return keyHandler;
             },
-            
+
+            createScreenSaver: function () {
+                var ss = RuntimeContext.getDevice().getScreenSaver();
+
+                return ss;
+            },
+
             wrapPopup: function(popup) {
                 var popupWrap = new Container();
                 popupWrap.addClass('popupWrap');
                 popupWrap.appendChildWidget(popup);
-                
+
                 return popupWrap;
             },
 
@@ -328,49 +360,16 @@ define(
                 this.setElementVisible(this.elements.network, show);
             },
 
-            /**
-             * TIZEN Screen Saver
-             */
             toggleScreenSaver: function(show) {
                 if (show === undefined) {
                     show = true;
                 }
 
                 try {
-                    show ? this.ss.on() : this.ss.off();
+                    show ? this.screenSaver.on() : this.screenSaver.off();
                 } catch (error) {
                     this.showErrorMessage('Screen Saver', error.message);
                 }
-            },
-
-            registerNetworkStatusListener: function () {
-                var self = this;
-                this.addEventListener('networkstatuschange', function (e) {
-                    switch (e.type) {
-                        case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
-                            self.toggleNetworkStatusAlert(true);
-                            break;
-
-                        case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
-                            self.toggleNetworkStatusAlert(false);
-                            break;
-                    }
-                });
-
-                /**
-                 * TIZEN Network check
-                 */
-                 webapis.network.addNetworkStateChangeListener(function (value) {
-                     switch (value) {
-                         case webapis.network.NetworkState.GATEWAY_DISCONNECTED:
-                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
-                             break;
-
-                         case webapis.network.NetworkState.GATEWAY_CONNECTED:
-                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
-                             break;
-                     }
-                 });
             },
 
             /**
