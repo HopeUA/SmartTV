@@ -249,30 +249,34 @@ define(
                 var self = this;
                 var keyHandler = new Button('keyHandler');
                 keyHandler.addEventListener('select', function () {
-                    if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                    var state = self.mediaPlayer.getState();
+
+                    if (state === MediaPlayer.STATE.PLAYING) {
                         self.mediaPlayer.pause();
-                    } else if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                    } else if (state === MediaPlayer.STATE.PAUSED) {
                         self.mediaPlayer.resume();
                     }
                 });
                 keyHandler.addEventListener('keydown', function (e) {
+                    var state = self.mediaPlayer.getState();
+
                     switch (e.keyCode) {
                         case KeyEvent.VK_PLAY:
-                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                            if (state === MediaPlayer.STATE.PAUSED) {
                                 self.mediaPlayer.resume();
                             }
                             break;
 
                         case KeyEvent.VK_PAUSE:
-                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                            if (state === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
                             }
                             break;
 
                         case KeyEvent.VK_PLAY_PAUSE:
-                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                            if (state === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
-                            } else if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                            } else if (state === MediaPlayer.STATE.PAUSED) {
                                 self.mediaPlayer.resume();
                             }
                             break;

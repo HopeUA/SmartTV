@@ -16,7 +16,7 @@
           "antie/devices/exit/samsung_maple",
           "antie/devices/exit/broadcast/samsung_maple",
           "antie/devices/parentalguidance/appdefaultpghandler",
-          "hope/devices/screen-saver/none",
+          "hope/devices/screensaver/none",
           "hope/devices/network/samsung_legacy"
         ]
       },
