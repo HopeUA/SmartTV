@@ -9,10 +9,6 @@ define(
         'use strict';
 
         var NetworkManager = Network.extend({
-            init: function () {
-                this._super();
-            },
-
             registerNetworkStatusListener: function () {
                 var self = this;
                 var interval = 500;

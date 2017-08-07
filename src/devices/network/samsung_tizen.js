@@ -9,10 +9,6 @@ define(
         'use strict';
 
         var NetworkManager = Network.extend({
-            init: function () {
-                this._super();
-            },
-
             registerNetworkStatusListener: function () {
                 var self = this;
                 webapis.network.addNetworkStateChangeListener(function (value) {
