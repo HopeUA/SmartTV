@@ -9,23 +9,23 @@ define(
 
         var SS = ScreenSaver.extend({
             init: function () {
-                this._super();
+                this.state = undefined;
             },
 
             on: function () {
-                if (this.state === true) {
+                if (this.state === ScreenSaver.STATE.SCREEN_SAVER_ON) {
                     return;
                 }
                 webapis.appcommon.setScreenSaver(webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_ON);
-                this.state = true;
+                this.state = ScreenSaver.STATE.SCREEN_SAVER_ON;
             },
 
             off: function () {
-                if (this.state === false) {
+                if (this.state === ScreenSaver.STATE.SCREEN_SAVER_OFF) {
                     return;
                 }
                 webapis.appcommon.setScreenSaver(webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_OFF);
-                this.state = false;
+                this.state = ScreenSaver.STATE.SCREEN_SAVER_OFF;
             }
         });
 

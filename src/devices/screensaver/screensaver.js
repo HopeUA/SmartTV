@@ -7,10 +7,6 @@ define(
         'use strict';
 
         var ScreenSaver = Device.extend({
-            init: function () {
-                this.state = undefined;
-            },
-
             on: function () {
                 throw new Error('on method has not been implemented');
             },
@@ -19,6 +15,11 @@ define(
                 throw new Error('off method has not been implemented');
             }
         });
+
+        ScreenSaver.STATE = {
+            SCREEN_SAVER_ON: 'SCREEN_SAVER_ON',
+            SCREEN_SAVER_OFF: 'SCREEN_SAVER_OFF'
+        };
 
         return ScreenSaver;
     }

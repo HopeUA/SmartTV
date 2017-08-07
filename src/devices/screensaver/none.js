@@ -8,9 +8,6 @@ define(
         'use strict';
 
         var SS = ScreenSaver.extend({
-            init: function () {
-            },
-
             on: function () {
             },
 
