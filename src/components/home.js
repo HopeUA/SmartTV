@@ -10,8 +10,6 @@ define(
         'antie/events/networkstatuschangeevent',
         'antie/runtimecontext',
         'antie/devices/mediaplayer/mediaplayer',
-        'hope/devices/screensaver/screensaver',
-        'hope/devices/network/network',
         'i18n!hope/nls/strings'
     ],
     function (
@@ -25,8 +23,6 @@ define(
         NetworkStatusChangeEvent,
         RuntimeContext,
         MediaPlayer,
-        ScreenSaver,
-        Network,
         $
     ) {
         return Component.extend({
@@ -34,7 +30,7 @@ define(
                 var self = this;
                 this._super('homePage');
 
-                this.screenSaver = this.createScreenSaver();
+                this.screenSaver = RuntimeContext.getDevice().getScreenSaver();
                 this.initElements();
                 this.registerNetworkManager();
                 this.visibilityChangeListener();
@@ -78,10 +74,15 @@ define(
                             break;
                     }
 
-                    if (e.type === MediaPlayer.EVENT.PLAYING) {
-                        self.toggleScreenSaver(false);
-                    } else if (e.type !== MediaPlayer.EVENT.STATUS) {
+                    var noSSEvents = [
+                        MediaPlayer.EVENT.PLAYING,
+                        MediaPlayer.EVENT.STATUS,
+                        MediaPlayer.EVENT.BUFFERING
+                    ];
+                    if (noSSEvents.indexOf(e.type) === -1) {
                         self.toggleScreenSaver(true);
+                    } else {
+                        self.toggleScreenSaver(false);
                     }
                 });
             },
@@ -290,12 +291,6 @@ define(
                 this.appendChildWidget(keyHandler);
 
                 return keyHandler;
-            },
-
-            createScreenSaver: function () {
-                var ss = RuntimeContext.getDevice().getScreenSaver();
-
-                return ss;
             },
 
             wrapPopup: function(popup) {
