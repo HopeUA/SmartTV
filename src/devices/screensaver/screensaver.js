@@ -17,8 +17,8 @@ define(
         });
 
         ScreenSaver.STATE = {
-            SCREEN_SAVER_ON: 'SCREEN_SAVER_ON',
-            SCREEN_SAVER_OFF: 'SCREEN_SAVER_OFF'
+            ON: 'SCREEN_SAVER_ON',
+            OFF: 'SCREEN_SAVER_OFF'
         };
 
         return ScreenSaver;

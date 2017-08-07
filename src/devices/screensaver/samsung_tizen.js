@@ -13,19 +13,19 @@ define(
             },
 
             on: function () {
-                if (this.state === ScreenSaver.STATE.SCREEN_SAVER_ON) {
+                if (this.state === ScreenSaver.STATE.ON) {
                     return;
                 }
                 webapis.appcommon.setScreenSaver(webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_ON);
-                this.state = ScreenSaver.STATE.SCREEN_SAVER_ON;
+                this.state = ScreenSaver.STATE.ON;
             },
 
             off: function () {
-                if (this.state === ScreenSaver.STATE.SCREEN_SAVER_OFF) {
+                if (this.state === ScreenSaver.STATE.OFF) {
                     return;
                 }
                 webapis.appcommon.setScreenSaver(webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_OFF);
-                this.state = ScreenSaver.STATE.SCREEN_SAVER_OFF;
+                this.state = ScreenSaver.STATE.OFF;
             }
         });
 
