@@ -50,11 +50,20 @@ define(
             initMediaPlayer: function () {
                 var self = this;
                 this.mediaPlayer = RuntimeContext.getDevice().getMediaPlayer();
+                this.errorCounter = this.initErrorCounter();
 
                 this.mediaPlayer.addEventCallback(this, function (e) {
                     switch (e.type) {
                         case MediaPlayer.EVENT.ERROR:
-                            self.showErrorMessage('Media Player', e.errorMessage);
+                            var errCtr = self.errorCounter();
+
+                            if (errCtr >= 3) {
+                                self.showErrorMessage('Media Player', e.errorMessage);
+                                self.errorCounter = self.initErrorCounter();
+                            } else {
+                                self.mediaPlayer.reset();
+                                self.startLive();
+                            }
                             break;
 
                         case MediaPlayer.EVENT.PLAYING:
@@ -85,6 +94,14 @@ define(
                         self.toggleScreenSaver(false);
                     }
                 });
+            },
+
+            initErrorCounter: function () {
+                var currentCounter = 1;
+
+                return function () {
+                    return currentCounter++;
+                }
             },
 
             /**
