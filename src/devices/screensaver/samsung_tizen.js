@@ -8,10 +8,6 @@ define(
         'use strict';
 
         var SS = ScreenSaver.extend({
-            init: function () {
-                this.state = undefined;
-            },
-
             on: function () {
                 if (this.state === ScreenSaver.STATE.ON) {
                     return;

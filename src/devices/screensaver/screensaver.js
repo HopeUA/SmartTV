@@ -1,12 +1,12 @@
 define(
     'hope/devices/screensaver/screensaver',
     [
-        'antie/devices/device'
+        'antie/class'
     ],
-    function(Device) {
+    function(Class) {
         'use strict';
 
-        var ScreenSaver = Device.extend({
+        var ScreenSaver = Class.extend({
             on: function () {
                 throw new Error('on method has not been implemented');
             },
