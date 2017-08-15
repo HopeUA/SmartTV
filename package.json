@@ -5,7 +5,7 @@
     "build:vendor": "gulp build:vendor",
     "build:src": "gulp build:src",
     "build:css": "gulp build:css",
-    "build": "npm run clean && npm run build:vendor && npm run build:src && npm run build:css"
+    "build": "gulp build"
   },
   "babel": {
     "plugins": [
@@ -27,7 +27,8 @@
     "fs-extra": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-postcss": "^7.0.0"
+    "gulp-postcss": "^7.0.0",
+    "gulp-sequence": "^0.4.6"
   },
   "browserslist": [
     "chrome >= 21",

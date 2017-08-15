@@ -15,7 +15,9 @@
           "antie/devices/logging/jstestdriver",
           "antie/devices/exit/samsung_maple",
           "antie/devices/exit/broadcast/samsung_maple",
-          "antie/devices/parentalguidance/appdefaultpghandler"
+          "antie/devices/parentalguidance/appdefaultpghandler",
+          "hope/devices/screensaver/none",
+          "hope/devices/network/samsung_legacy"
         ]
       },
       "logging": {

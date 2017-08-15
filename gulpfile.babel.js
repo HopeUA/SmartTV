@@ -125,3 +125,10 @@ gulp.task('build:css', () => {
 
     return stream;
 });
+
+/**
+ * Task: Build
+ *
+ * Combined task
+ */
+gulp.task('build', $.sequence('clean', ['build:vendor', 'build:src'], 'build:css'));

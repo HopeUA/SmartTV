@@ -1,8 +1,8 @@
 define(
     [
         'antie/widgets/widget',
-        'antie/widgets/container',
         'antie/widgets/component',
+        'antie/widgets/container',
         'antie/widgets/horizontallist',
         'antie/widgets/button',
         'antie/widgets/label',
@@ -30,8 +30,9 @@ define(
                 var self = this;
                 this._super('homePage');
 
+                this.screenSaver = RuntimeContext.getDevice().getScreenSaver();
                 this.initElements();
-                this.registerNetworkStatusListener();
+                this.registerNetworkManager();
                 this.visibilityChangeListener();
 
                 this.keyHandler = this.createKeyHandler();
@@ -49,11 +50,20 @@ define(
             initMediaPlayer: function () {
                 var self = this;
                 this.mediaPlayer = RuntimeContext.getDevice().getMediaPlayer();
+                this.errorCounter = this.initErrorCounter();
 
                 this.mediaPlayer.addEventCallback(this, function (e) {
                     switch (e.type) {
                         case MediaPlayer.EVENT.ERROR:
-                            self.showErrorMessage('Media Player', e.errorMessage);
+                            var errCtr = self.errorCounter();
+
+                            if (errCtr >= 3) {
+                                self.showErrorMessage('Media Player', e.errorMessage);
+                                self.errorCounter = self.initErrorCounter();
+                            } else {
+                                self.mediaPlayer.reset();
+                                self.startLive();
+                            }
                             break;
 
                         case MediaPlayer.EVENT.PLAYING:
@@ -73,12 +83,25 @@ define(
                             break;
                     }
 
-                    if (e.type === MediaPlayer.EVENT.PLAYING) {
-                        self.toggleScreenSaver(false);
-                    } else {
+                    var noSSEvents = [
+                        MediaPlayer.EVENT.PLAYING,
+                        MediaPlayer.EVENT.STATUS,
+                        MediaPlayer.EVENT.BUFFERING
+                    ];
+                    if (noSSEvents.indexOf(e.type) === -1) {
                         self.toggleScreenSaver(true);
+                    } else {
+                        self.toggleScreenSaver(false);
                     }
                 });
+            },
+
+            initErrorCounter: function () {
+                var currentCounter = 1;
+
+                return function () {
+                    return currentCounter++;
+                }
             },
 
             /**
@@ -120,16 +143,56 @@ define(
                 this.elements = elements;
             },
 
+            registerNetworkManager: function () {
+                var network = RuntimeContext.getDevice().getNetworkManager();
+                network.addEventCallback(this, function (e) {
+                    if (e.type === 'networkstatuschange') {
+                        switch (e.networkStatus) {
+                            case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
+                                switch (this.mediaPlayer.getState()) {
+                                    case MediaPlayer.STATE.BUFFERING:
+                                    case MediaPlayer.STATE.PLAYING:
+                                    case MediaPlayer.STATE.PAUSED:
+                                        this.mediaPlayer.stop();
+                                }
+
+                                this.toggleNetworkStatusAlert(true);
+                                break;
+
+                            case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
+                                switch (this.mediaPlayer.getState()) {
+                                    case MediaPlayer.STATE.BUFFERING:
+                                    case MediaPlayer.STATE.PLAYING:
+                                    case MediaPlayer.STATE.PAUSED:
+                                        this.mediaPlayer.stop();
+
+                                    case MediaPlayer.STATE.ERROR:
+                                    case MediaPlayer.STATE.STOPPED:
+                                        this.mediaPlayer.reset();
+
+                                    case MediaPlayer.STATE.EMPTY:
+                                        if (!document.hidden) {
+                                            this.startLive();
+                                        }
+                                        break;
+                                }
+                                this.toggleNetworkStatusAlert(false);
+                                break;
+                        }
+                    }
+                });
+            },
+
             createPlayButton: function () {
-                var playButton = new Component('playButton');
+                var playButton = new Container('playButton');
 
                 return playButton;
             },
 
             createExitPopup: function () {
                 var self = this;
-                
-                var exitPopup = new Component('exitPopup');
+
+                var exitPopup = new Container('exitPopup');
                 exitPopup.addClass('popup');
 
                 var message = new Label('exitMessage', $.exit.message);
@@ -170,7 +233,7 @@ define(
             createErrorMessagePopup: function () {
                 var self = this;
 
-                var errorPopup = new Component('errorPopup');
+                var errorPopup = new Container('errorPopup');
                 errorPopup.addClass('popup');
 
                 var title = new Label('errorTitle', 'error');
@@ -200,13 +263,13 @@ define(
             },
 
             createLoader: function () {
-                var loader = new Component('loader');
+                var loader = new Container('loader');
 
                 return loader;
             },
 
             createNetworkStatusPopup: function () {
-                var networkStatusPopup = new Component('networkStatusPopup');
+                var networkStatusPopup = new Container('networkStatusPopup');
                 networkStatusPopup.addClass('popup');
 
                 var message = new Label('networkStatusMessage', $.network);
@@ -220,30 +283,34 @@ define(
                 var self = this;
                 var keyHandler = new Button('keyHandler');
                 keyHandler.addEventListener('select', function () {
-                    if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                    var state = self.mediaPlayer.getState();
+
+                    if (state === MediaPlayer.STATE.PLAYING) {
                         self.mediaPlayer.pause();
-                    } else if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                    } else if (state === MediaPlayer.STATE.PAUSED) {
                         self.mediaPlayer.resume();
                     }
                 });
                 keyHandler.addEventListener('keydown', function (e) {
+                    var state = self.mediaPlayer.getState();
+
                     switch (e.keyCode) {
                         case KeyEvent.VK_PLAY:
-                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                            if (state === MediaPlayer.STATE.PAUSED) {
                                 self.mediaPlayer.resume();
                             }
                             break;
 
                         case KeyEvent.VK_PAUSE:
-                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                            if (state === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
                             }
                             break;
 
                         case KeyEvent.VK_PLAY_PAUSE:
-                            if (self.mediaPlayer.getState() === MediaPlayer.STATE.PLAYING) {
+                            if (state === MediaPlayer.STATE.PLAYING) {
                                 self.mediaPlayer.pause();
-                            } else if (self.mediaPlayer.getState() === MediaPlayer.STATE.PAUSED) {
+                            } else if (state === MediaPlayer.STATE.PAUSED) {
                                 self.mediaPlayer.resume();
                             }
                             break;
@@ -258,12 +325,12 @@ define(
 
                 return keyHandler;
             },
-            
+
             wrapPopup: function(popup) {
-                var popupWrap = new Component();
+                var popupWrap = new Container();
                 popupWrap.addClass('popupWrap');
                 popupWrap.appendChildWidget(popup);
-                
+
                 return popupWrap;
             },
 
@@ -325,52 +392,16 @@ define(
                 this.setElementVisible(this.elements.network, show);
             },
 
-            /**
-             * TIZEN Screen Saver
-             */
             toggleScreenSaver: function(show) {
-                var self = this;
                 if (show === undefined) {
                     show = true;
                 }
 
-                webapis.appcommon.setScreenSaver(
-                    show ? webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_ON : webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_OFF,
-                    function() {},
-                    function(error) {
-                        self.showErrorMessage('Screen Saver', error.message);
-                    }
-                );
-            },
-
-            registerNetworkStatusListener: function () {
-                var self = this;
-                this.addEventListener('networkstatuschange', function (e) {
-                    switch (e.type) {
-                        case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
-                            self.toggleNetworkStatusAlert(true);
-                            break;
-
-                        case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
-                            self.toggleNetworkStatusAlert(false);
-                            break;
-                    }
-                });
-
-                /**
-                 * TIZEN Network check
-                 */
-                 webapis.network.addNetworkStateChangeListener(function (value) {
-                     switch (value) {
-                         case webapis.network.NetworkState.GATEWAY_DISCONNECTED:
-                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE));
-                             break;
-
-                         case webapis.network.NetworkState.GATEWAY_CONNECTED:
-                             self.fireEvent(new NetworkStatusChangeEvent(NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE));
-                             break;
-                     }
-                 });
+                try {
+                    show ? this.screenSaver.on() : this.screenSaver.off();
+                } catch (error) {
+                    this.showErrorMessage('Screen Saver', error.message);
+                }
             },
 
             /**

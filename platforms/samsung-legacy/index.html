@@ -17,9 +17,13 @@
 <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
 <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
 
-<script data-main="src/app" src="vendor/require.js"></script>
+<script data-main="src/app" src="vendor/requirejs/require.js"></script>
 
 <script>
+var lang = /lang=([a-zA-Z]{2})/.exec(window.location.href);
+if(lang) {
+    navigator.language = lang[1];
+}
 window.onload = window.onLoad = function() {
     var widgetAPI = new Common.API.Widget();
     widgetAPI.sendReadyEvent();

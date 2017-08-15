@@ -3,6 +3,6 @@
  */
 define({
     "root": true,
-    "uk-ua": true,
-    "ru-ru": true
+    "uk": true,
+    "ru": true
 });

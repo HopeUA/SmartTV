@@ -8,7 +8,7 @@
   <ListIconHD itemtype="string">icon/legacy__list-iconHD.png</ListIconHD>
   <BigListIcon itemtype="string">icon/legacy__big-list-icon.png</BigListIcon>
   <BigListIconHD itemtype="string">icon/legacy__big-list-iconHD.png</BigListIconHD>
-  
+
   <category itemtype="string">Videos</category>
   <autoUpdate itemtype="boolean">y</autoUpdate>
 
