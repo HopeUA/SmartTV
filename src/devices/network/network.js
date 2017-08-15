@@ -1,13 +1,13 @@
 define(
     'hope/devices/network/network',
     [
-        'antie/devices/device',
+        'antie/class',
         'antie/callbackmanager'
     ],
-    function(Device, CallbackManager) {
+    function(Class, CallbackManager) {
         'use strict';
 
-        var Network = Device.extend({
+        var Network = Class.extend({
             init: function () {
                 this._callbackManager = new CallbackManager();
                 this.registerNetworkStatusListener();

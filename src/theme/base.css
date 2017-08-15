@@ -27,6 +27,7 @@ body {
 }
 
 .popup {
+    display: inline-block;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -54,6 +55,7 @@ body {
 }
 
 .button {
+    display: inline-block;
     border: 2px solid #008cda;
     width: 30%;
     padding: 2% 0;

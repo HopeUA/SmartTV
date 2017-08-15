@@ -149,18 +149,34 @@ define(
                     if (e.type === 'networkstatuschange') {
                         switch (e.networkStatus) {
                             case NetworkStatusChangeEvent.NETWORK_STATUS_OFFLINE:
+                                switch (this.mediaPlayer.getState()) {
+                                    case MediaPlayer.STATE.BUFFERING:
+                                    case MediaPlayer.STATE.PLAYING:
+                                    case MediaPlayer.STATE.PAUSED:
+                                        this.mediaPlayer.stop();
+                                }
+
                                 this.toggleNetworkStatusAlert(true);
                                 break;
 
                             case NetworkStatusChangeEvent.NETWORK_STATUS_ONLINE:
-                                this.toggleNetworkStatusAlert(false);
                                 switch (this.mediaPlayer.getState()) {
+                                    case MediaPlayer.STATE.BUFFERING:
+                                    case MediaPlayer.STATE.PLAYING:
+                                    case MediaPlayer.STATE.PAUSED:
+                                        this.mediaPlayer.stop();
+
                                     case MediaPlayer.STATE.ERROR:
+                                    case MediaPlayer.STATE.STOPPED:
                                         this.mediaPlayer.reset();
+
                                     case MediaPlayer.STATE.EMPTY:
-                                        this.startLive();
+                                        if (!document.hidden) {
+                                            this.startLive();
+                                        }
                                         break;
                                 }
+                                this.toggleNetworkStatusAlert(false);
                                 break;
                         }
                     }
